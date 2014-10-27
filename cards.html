@@ -181,7 +181,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					<section id="details">
 
 						<div class="card" layout horizontal hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}" hero on-tap="{{transition}}">
-							<div class="card-left" style="background-image: url('images/{{selectedProject.project}}.jpg'); background-size: contain; background-repeat: no-repeat; " hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}-art" hero></div>
+							<div class="card-left" style="background-image: url('images/{{selectedProject.imageLink}}'); background-size: contain; background-repeat: no-repeat; " hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}-art" hero></div>
 							<div class="card-right" flex>
 								<div layout horizontal center>
 									<div>
@@ -233,12 +233,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 						project : 'Fitted Threads',
 						color : '#590000',
 						description : "I had the pleasure of co-founding this custom-made clothing startup with a friend of mine. \n Anything technology related was my responsibility, and as we are an online-only clothing store, I had the opportunity to learn about and utilize many different aspects of web development.",
+						imageLink : "Fitted-Threads.jpg",
 						projectLink : "https://fittedthreads.com"
 					}, {
 						technologies : 'Angular.js',
 						project : 'SMS Tool',
 						color : '#4e2b63',
 						description : "This past summer I had the opportunity to intern at DoSomething.org. They run several sms games using Mobile Commons, and had an internal system that utilized different information about campaigns. Using Angular.js, I developed a tool to help campaign managers keep track of and update the info without bugging the developersS",
+						imageLink : "SMS-Tool.jpg",
 						projectLink : "http://rafistrauss.github.io/ds-project/",
 						codeLink : "https://github.com/rafistrauss/ds-project"
 					}, {
@@ -246,6 +248,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 						project : 'Distance Calculator',
 						color : '#3D6DA8',
 						description : "In order to get the internship at DoSomething, I completed a small code screen. The task was to find the nearest 3 schools to a specified zip code, given a set of schools and their lat/long. I used a free geocoding service and an optimized haversine function to accomplish this task. ",
+						imageLink : "Distance-Calculator.jpg",
 						projectLink : "http://rafistrauss.github.io/NearSchoolFinder/",
 						codeLink : "https://github.com/rafistrauss/NearSchoolFinder"
 					}],

@@ -1,0 +1,279 @@
+<!--
+@license
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<!doctype html>
+<html>
+	<head>
+		<title>core-animated-pages</title>
+
+		<script src="bower_components/platform/platform.js"></script>
+		<link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
+
+		<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+
+		<style>
+			body {
+				font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				margin: 0;
+				background: #f1f1f1;
+			}
+
+			.green {
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				height: 350px;
+				background: #76F767;
+			}
+			
+			#authorInfo {
+				text-align: center;
+				padding-top: 100px;
+				font-size: 200%;
+			}
+			
+			#authorInfo img {
+				width: 100px;
+			}
+
+			a {
+				text-decoration: none;
+				color: #3367d6;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+
+		<polymer-element name="project-display">
+			<template>
+
+				<style>
+					.chip-container {
+						position: absolute;
+						top: 275px;
+						right: 0;
+						left: 0;
+						text-align: center;
+					}
+
+					.chip {
+						display: inline-block;
+						position: relative;
+						border-radius: 3px;
+						margin: 4px;
+						overflow: hidden;
+						text-align: start;
+						background-color: #fff;
+						box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+						max-width: 200px;
+					}
+
+					.chip-top {
+						width: 200px;
+						height: 200px;
+					}
+
+					.chip-bottom {
+						padding: 8px;
+						line-height: 1.5;
+					}
+
+					.chip-technologies {
+						white-space: nowrap;
+						
+					}
+					
+					.fade {
+						background: linear-gradient(to right, rgba(255,255,255,.6) 30%,rgba(255,255,255,1) 100%);
+						width: 10px;
+					}
+
+					.chip-project-title {
+						font-weight: bold;
+					}
+
+					#details {
+						padding: 200px 10% 0;
+					}
+
+					.card {
+						height: 400px;
+						border-radius: 3px;
+						text-align: start;
+						overflow: hidden;
+						background: #fff;
+						box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+					}
+
+					.card-left {
+						width: 400px;
+					}
+
+					.card-right {
+						padding: 24px;
+					}
+
+					.card-icon {
+						border-radius: 50%;
+						width: 60px;
+						height: 60px;
+						margin-right: 16px;
+					}
+
+					.card-project-title {
+						font-size: 2em;
+					}
+
+					.projectDescription {
+						margin-top: 5%;
+					}
+
+					a {
+						text-decoration: none;
+						color: #3367d6;
+					}
+
+					a:hover {
+						text-decoration: underline;
+					}
+					
+					
+					
+				</style>
+
+				<core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
+
+					<section>
+
+						<div class="chip-container" hero-p on-tap="{{transition}}">
+
+							<template repeat="{{items as item}}">
+
+								<div class="chip" hero-id="{{item.technologies}}-{{item.project}}" hero?="{{selectedProject === item }}">
+									<div class="chip-top" style="background:{{item.color}};" hero-id="{{item.technologies}}-{{item.project}}-art" hero?="{{selectedProject === item}}"></div>
+									<div class="chip-bottom">
+										<div class="chip-project-title">
+											{{item.project}}
+										</div>
+										<div class="chip-technologies">
+											<div class="fade"></div>
+											{{item.technologies}}
+										</div>
+									</div>
+								</div>
+
+							</template>
+
+						</div>
+					</section>
+
+					<section id="details">
+
+						<div class="card" layout horizontal hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}" hero on-tap="{{transition}}">
+							<div class="card-left" style="background-image: url('images/{{selectedProject.project}}.png'); background-size: contain; background-repeat: no-repeat; " hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}-art" hero></div>
+							<div class="card-right" flex>
+								<div layout horizontal center>
+									<div>
+										<div class="card-icon" style="background:{{selectedProject.color}};"></div>
+									</div>
+									<div flex>
+										<div class="card-project-title">
+											{{selectedProject.project}}
+										</div>
+										<div class="card-project-technologies">
+											<b>Uses:</b> {{selectedProject.technologies}}
+										</div>
+
+									</div>
+								</div>
+
+								<div class="projectDescription">
+									{{selectedProject.description}}
+								</div>
+								<div class="projectDescription">
+									You can see this project here: <a href="{{selectedProject.projectLink}}" target="_blank">{{selectedProject.project}}</a>
+								</div>
+								<template if="{{selectedProject.codeLink}}">
+									<div class="projectDescription" >
+										The public repo is here: <a href="{{selectedProject.codeLink}}" target="_blank">{{selectedProject.project}} Repo</a>
+									</div>
+								</template>
+								<template if="{{!selectedProject.codeLink}}">
+									<div class="projectDescription" >
+										Unfortunatly I couldn't make the repo for this project public. 
+									</div>
+								</template>
+
+							</div>
+						</div>
+
+					</section>
+
+				</core-animated-pages>
+
+			</template>
+			<script>
+				Polymer('project-display', {
+
+					page : 0,
+
+					items : [{
+						technologies : 'HTML/CSS, JS/Jquery, PHP, SQL',
+						project : 'Fitted Threads',
+						color : '#590000',
+						description : "I had the pleasure of co-founding this custom-made clothing startup with a friend of mine. \n Anything technology related was my responsibility, and as we are an online-only clothing store, I had the opportunity to learn about and utilize many different aspects of web development.",
+						projectLink : "https://fittedthreads.com"
+					}, {
+						technologies : 'Angular.js',
+						project : 'SMS Tool',
+						color : '#4e2b63',
+						description : "This past summer I had the opportunity to intern at DoSomething.org. They run several sms games using Mobile Commons, and had an internal system that utilized different information about campaigns. Using Angular.js, I developed a tool to help campaign managers keep track of and update the info without bugging the developersS",
+						projectLink : "http://rafistrauss.github.io/ds-project/",
+						codeLink : "https://github.com/rafistrauss/ds-project"
+					}, {
+						technologies : 'Javascript',
+						project : 'Distance Calculator',
+						color : '#3D6DA8',
+						description : "In order to get the internship at DoSomething, I completed a small code screen. The task was to find the nearest 3 schools to a specified zip code, given a set of schools and their lat/long. I used a free geocoding service and an optimized haversine function to accomplish this task. ",
+						projectLink : "http://rafistrauss.github.io/NearSchoolFinder/",
+						codeLink : "https://github.com/rafistrauss/NearSchoolFinder"
+					}],
+
+					selectedProject : null,
+
+					transition : function(e) {
+						if (this.page === 0 && e.target.templateInstance.model.item) {
+							this.selectedProject = e.target.templateInstance.model.item;
+							this.page = 1;
+						} else {
+							this.page = 0;
+						}
+					}
+				});
+			</script>
+		</polymer-element>
+
+		<div class="green">
+			<div id="authorInfo">
+				Rafi's Portfolio
+				<br />
+				<img src="images/rafi.png" />
+				
+				
+			</div>
+		</div>
+
+		<project-display></project-display>
+	</body>
+</html>

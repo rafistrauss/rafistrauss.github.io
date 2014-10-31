@@ -14,10 +14,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 		<script src="bower_components/platform/platform.js"></script>
 		<link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
-		
+
 		<link rel="import" href="bower_components/core-icon/core-icon.html">
 		<link rel="import" href="bower_components/core-icons/core-icons.html">
 		<link rel="import" href="bower_components/core-icons/social-icons.html">
+		<link rel="import" href="bower_components/paper-fab/paper-fab.html" />
 
 		<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
 
@@ -35,7 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				left: 0;
 				height: 400px;
 				background: #76F767;
-				
+				z-index: -5;
 			}
 
 			#authorInfo {
@@ -52,6 +53,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				font-size: 200%;
 			}
 
+			.contact {
+				position: absolute;
+				top: 550px;
+				right: 0;
+				z-index: -1;
+				width: 25%;
+			}
+			.contact paper-fab {
+				margin-top: 2%;
+				
+			}
+			
+			.contact span {
+				margin-left: 2%;
+			}
+
 			a {
 				text-decoration: none;
 				color: #3367d6;
@@ -61,11 +78,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				text-decoration: underline;
 			}
 			
-			core-icon[icon="social:post-linkedin"], core-icon[icon="social:post-github"]  {
-			    width: 32px;
-			    height: 32px;
+			a img {
+				text-decoration: none;
 			}
-			
+
+			core-icon[icon="social:post-linkedin"], core-icon[icon="social:post-github"] {
+				width: 32px;
+				height: 32px;
+			}
+
+			paper-fab[icon="mail"] {
+				background: blue;
+			}
+
+			paper-fab[icon="settings-phone"] {
+				background: green;
+			}
+
 		</style>
 	</head>
 	<body>
@@ -76,10 +105,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<style>
 					.chip-container {
 						position: absolute;
-						top: 275px;
+						top: 325px;
 						right: 0;
 						left: 0;
 						text-align: center;
+						z-index: -2;
 					}
 
 					.chip {
@@ -92,6 +122,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 						background-color: #fff;
 						box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
 						max-width: 200px;
+						cursor: pointer;
 					}
 
 					.chip-top {
@@ -109,8 +140,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					}
 
 					.fade {
-						background: linear-gradient(to right, rgba(255,255,255,.6) 30%,rgba(255,255,255,1) 100%);
-						width: 10px;
+						display: block;
+						position: absolute;
+						height: 30px;
+						width: 23px;
+						right: 0;
+						background: linear-gradient(to right, rgba(255, 255, 255, .6) 30%, rgba(255, 255, 255, 1) 100%);
+						background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, .6)), color-stop(100%, rgba(255, 255, 255, 1)));
+						background: -webkit-linear-gradient(left, rgba(255, 255, 255, .6) 30%, rgba(255, 255, 255, 1) 100%);
+						bottom: 0;
 					}
 
 					.chip-project-title {
@@ -223,7 +261,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 								</template>
 								<template if="{{!selectedProject.codeLink}}">
 									<div class="projectDescription" >
-										Unfortunatly I couldn't make the repo for this project public.
+										Unfortunately I couldn't make the repo for this project public.
 									</div>
 								</template>
 
@@ -251,7 +289,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 						technologies : 'Angular.js',
 						project : 'SMS Tool',
 						color : '#4e2b63',
-						description : "This past summer I had the opportunity to intern at DoSomething.org. They run several sms games using Mobile Commons, and had an internal system that utilized different information about campaigns. Using Angular.js, I developed a tool to help campaign managers keep track of and update the info without bugging the developersS",
+						description : "This past summer I had the opportunity to intern at DoSomething.org. They run several sms games using Mobile Commons, and had an internal system that utilized different information about campaigns. Using Angular.js, I developed a tool to help campaign managers keep track of and update the info without bugging the developers.",
 						imageLink : "SMS-Tool.jpg",
 						projectLink : "http://rafistrauss.github.io/ds-project/",
 						codeLink : "https://github.com/rafistrauss/ds-project"
@@ -279,36 +317,87 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			</script>
 		</polymer-element>
 
+		<polymer-element name="contact-display">
+			<template>
+				<style>
+					paper-fab[icon="mail"] {
+						background: blue;
+					}
+
+					paper-fab[icon="settings-phone"] {
+						background: green;
+					}
+					
+					paper-fab {
+						
+						margin-bottom: 5%;
+					}
+					
+				</style>
+				<section>
+					<template repeat="{{methods}}" >
+						
+						<paper-fab mini icon={{icon}} on-tap="{{toggleLink}}"></paper-fab>
+						<a href="{{link}}" style="display: none;" >{{display}}</a>
+						
+						<br />
+					</template>
+				</section>
+			</template>
+			<script>
+				Polymer('contact-display', {
+
+					methods : [{
+						icon : "mail",
+						link : "mailto:raphael.strauss@hotmail.com",
+						display : "raphael.strauss@hotmail.com"
+					}, {
+						icon : "settings-phone",
+						link : "tel:18722286724",
+						display : "872-228-6724"
+					}],
+					
+					toggleLink : function() {
+						
+					}
+				});
+			</script>
+		</polymer-element>
+
 		<div class="green">
+			<div style="text-align: right; padding: 5px;">
+				<a href="https://github.com/rafistrauss/rafistrauss.github.io"><core-icon icon="polymer"></core-icon></a>
+			</div>
 			<div id="authorInfo">
 				<span id="authorTitle"> Rafi Strauss's Portfolio</span>
 				<br />
 				<img src="images/rafi_3.png" />
 				<br />
-				<em>
-				I love building clean, simple, and awesome apps. Check out my profiles:
-				</em>
-				
+				<em> I love building clean, simple, and awesome apps. Check out my profiles: </em>
+
 				<br />
-				<a target="_blank" href="https://www.linkedin.com/profile/view?id=153345648&trk=nav_responsive_tab_profile">
-				<core-icon icon="social:post-linkedin"></core-icon>
-				</a>
-				<a target="_blank" href="https://github.com/rafistrauss">
-				<core-icon icon="social:post-github"></core-icon>	
-				</a>
-				<a target="_blank" href="http://stackoverflow.com/users/1851509/general-twyckenham">
-					<img src="images/stackoverflow_blue.svg" width="24px" style="display: inline-block;
-vertical-align: middle;
-background-repeat: no-repeat;
-position: relative;
-height: 31px;
-width: 31px;" />
-				</a>
-				
+				<a target="_blank" href="https://www.linkedin.com/profile/view?id=153345648&trk=nav_responsive_tab_profile"> <core-icon icon="social:post-linkedin"></core-icon> </a>
+				<a target="_blank" href="https://github.com/rafistrauss"> <core-icon icon="social:post-github"></core-icon> </a>
+				<a target="_blank" href="http://stackoverflow.com/users/1851509/general-twyckenham"> <img src="images/stackoverflow_blue.svg" width="24px" style="display: inline-block;
+				vertical-align: middle;
+				background-repeat: no-repeat;
+				position: relative;
+				height: 31px;
+				width: 31px;" /> </a>
+
+				<br />
 
 			</div>
 		</div>
 
 		<project-display></project-display>
+
+		<div class="contact">
+			<a href="mailto:raphael.strauss@hotmail.com"> <paper-fab mini icon="mail" class="no" ></paper-fab> <span>raphael.strauss@hotmail.com</span></a>
+			<br />
+			<a href="tel:18722286724"> <paper-fab mini icon="settings-phone"></paper-fab><span>872-228-6724</span></a>
+			
+		</div>
+
 	</body>
 </html>

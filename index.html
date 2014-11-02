@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!doctype html>
 <html>
 	<head>
-		<title>Rafi Strauss's Portfolio</title>
+		<title>Rafi Strauss</title>
 
 		<script src="bower_components/platform/platform.js"></script>
 		<link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
@@ -21,6 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		<link rel="import" href="bower_components/paper-fab/paper-fab.html" />
 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 		<style>
 			body {
@@ -35,7 +36,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				right: 0;
 				left: 0;
 				height: 400px;
-				background: #76F767;
+				background: #A8CDBB;
 				z-index: -5;
 			}
 
@@ -45,7 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			}
 
 			#authorInfo img {
-				width: 100px;
+				width: 150px;
 				padding: 10px 0;
 			}
 
@@ -71,20 +72,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 			a {
 				text-decoration: none;
-				color: #3367d6;
+				color: #705051;
 			}
 
 			a:hover {
-				text-decoration: underline;
+				
+				color: #C5937C;
 			}
 			
-			a img {
-				text-decoration: none;
+			.underline:hover {
+				text-decoration: underline;
 			}
 
 			core-icon[icon="social:post-linkedin"], core-icon[icon="social:post-github"] {
 				width: 32px;
 				height: 32px;
+			}
+			
+			i, .fa {
+				font-size: 200%;
+				position: relative;
+				top: 5px;
+				left: 5px;
+			}
+			i:hover, .fa:hover {
+				text-decoration: none;
 			}
 
 			paper-fab[icon="mail"] {
@@ -105,7 +117,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<style>
 					.chip-container {
 						position: absolute;
-						top: 325px;
+						top: 375px;
 						right: 0;
 						left: 0;
 						text-align: center;
@@ -199,6 +211,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					a:hover {
 						text-decoration: underline;
 					}
+					
+					
 
 				</style>
 
@@ -369,7 +383,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<a href="https://github.com/rafistrauss/rafistrauss.github.io"><core-icon icon="polymer"></core-icon></a>
 			</div>
 			<div id="authorInfo">
-				<span id="authorTitle"> Rafi Strauss's Portfolio</span>
+				<span id="authorTitle"> Rafi Strauss</span>
 				<br />
 				<img src="images/rafi_3.png" />
 				<br />
@@ -378,12 +392,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<br />
 				<a target="_blank" href="https://www.linkedin.com/profile/view?id=153345648&trk=nav_responsive_tab_profile"> <core-icon icon="social:post-linkedin"></core-icon> </a>
 				<a target="_blank" href="https://github.com/rafistrauss"> <core-icon icon="social:post-github"></core-icon> </a>
-				<a target="_blank" href="http://stackoverflow.com/users/1851509/general-twyckenham"> <img src="images/stackoverflow_blue.svg" width="24px" style="display: inline-block;
-				vertical-align: middle;
-				background-repeat: no-repeat;
-				position: relative;
-				height: 31px;
-				width: 31px;" /> </a>
+				<a target="_blank" href="http://stackoverflow.com/users/1851509/general-twyckenham">
+					<i class="fa fa-stack-overflow"></i> 
+					</a>
 
 				<br />
 

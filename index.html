@@ -19,6 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		<link rel="import" href="bower_components/core-icons/core-icons.html">
 		<link rel="import" href="bower_components/core-icons/social-icons.html">
 		<link rel="import" href="bower_components/paper-fab/paper-fab.html" />
+		<link rel="import" href="bower_components/core-tooltip/core-tooltip.html" />
 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -54,6 +55,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				font-size: 200%;
 			}
 
+			#profileLinks core-tooltip {
+				margin: 1%;
+			}
+
 			.contact {
 				position: absolute;
 				top: 550px;
@@ -63,9 +68,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			}
 			.contact paper-fab {
 				margin-top: 2%;
-				
 			}
-			
+
 			.contact span {
 				margin-left: 2%;
 			}
@@ -76,25 +80,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			}
 
 			a:hover {
-				
+
 				color: #C5937C;
 			}
-			
+
 			.underline:hover {
 				text-decoration: underline;
 			}
 
-			core-icon[icon="social:post-linkedin"], core-icon[icon="social:post-github"] {
+			core-icon[icon="social:post-linkedin"], core-icon[icon="social:post-github"], core-icon[icon="drive-document"] {
 				width: 32px;
 				height: 32px;
 			}
-			
+
 			i, .fa {
 				font-size: 200%;
 				position: relative;
 				top: 5px;
-				left: 5px;
 			}
+
 			i:hover, .fa:hover {
 				text-decoration: none;
 			}
@@ -108,6 +112,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			}
 
 		</style>
+
+		<style shim-shadowdom>
+			core-tooltip.fancy::shadow .core-tooltip {
+				opacity: 0;
+				-webkit-transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+				transition: all 300ms cubic-bezier(0,1.92,.99,1.07);
+				-webkit-transform: translate3d(0, 20px, 0);
+				transform: translate3d(0, 20px, 0);
+			}
+
+			core-tooltip.fancy:hover::shadow .core-tooltip, core-tooltip.fancy:focus::shadow .core-tooltip {
+				opacity: 1;
+				-webkit-transform: translate3d(0, 0, 0);
+				transform: translate3d(0, 0, 0);
+			}
+		</style>
+
 	</head>
 	<body>
 
@@ -211,8 +232,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					a:hover {
 						text-decoration: underline;
 					}
-					
-					
 
 				</style>
 
@@ -341,19 +360,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					paper-fab[icon="settings-phone"] {
 						background: green;
 					}
-					
+
 					paper-fab {
-						
+
 						margin-bottom: 5%;
 					}
-					
+
 				</style>
 				<section>
 					<template repeat="{{methods}}" >
-						
+
 						<paper-fab mini icon={{icon}} on-tap="{{toggleLink}}"></paper-fab>
 						<a href="{{link}}" style="display: none;" >{{display}}</a>
-						
+
 						<br />
 					</template>
 				</section>
@@ -370,35 +389,121 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 						link : "tel:18722286724",
 						display : "872-228-6724"
 					}],
-					
+
 					toggleLink : function() {
-						
+
 					}
+				});
+			</script>
+		</polymer-element>
+
+		<polymer-element name="profile-links">
+			<template>
+				<style>
+					a {
+						text-decoration: none;
+						color: #705051;
+					}
+
+					a:hover {
+
+						color: #C5937C;
+					}
+
+					.underline:hover {
+						text-decoration: underline;
+					}
+
+					core-icon {
+						width: 32px;
+						height: 32px;
+					}
+
+					i, .fa {
+						font-size: 200%;
+						position: relative;
+						top: 5px;
+					}
+
+					i:hover, .fa:hover {
+						text-decoration: none;
+					}
+				</style>
+
+				<section>
+					<template repeat="{{links}}">
+						<a target="_blank" href="{{link}}">
+						<core-tooltip label="{{tooltip}}" position="top" large>
+							<template if="{{paper}}">
+								<core-icon icon="{{icon}}"></core-icon>
+							</template>
+							<template if="{{!paper}}">
+								<i class="fa {{vector}}"></i>
+							</template>
+						</core-tooltip> </a>
+					</template>
+				</section>
+
+			</template>
+			<script>
+				Polymer('profile-links', {
+					links : [{
+						link : "https://www.linkedin.com/profile/view?id=153345648&trk=nav_responsive_tab_profile",
+						tooltip : "LinkedIn Profile",
+						paper : true,
+						icon : "social:post-linkedin"
+					}, {
+						link : "",
+						tooltip : "Github profile",
+						paper : true,
+						icon : "social:post-github"
+					}, {
+						link : "",
+						tooltip : "StackOverflow Profile",
+						vector : "fa-stack-overflow"
+					}]
 				});
 			</script>
 		</polymer-element>
 
 		<div class="green">
 			<div style="text-align: right; padding: 5px;">
-				<a href="https://github.com/rafistrauss/rafistrauss.github.io"><core-icon icon="polymer"></core-icon></a>
+				<a target="_blank" href="https://github.com/rafistrauss/rafistrauss.github.io"><core-icon icon="polymer"></core-icon></a>
 			</div>
 			<div id="authorInfo">
 				<span id="authorTitle"> Rafi Strauss</span>
 				<br />
 				<img src="images/rafi_3.png" />
 				<br />
-				<em> I love building clean, simple, and awesome apps. Check out my profiles: </em>
+				<em> I love building clean, simple, and awesome apps. Check out my profiles and resume: </em>
+
+				<div id="profileLinks" >
+
+					<core-tooltip label="LinkedIn Profile" position="top" large class="fancy">
+						<a target="_blank" href="https://www.linkedin.com/profile/view?id=153345648&trk=nav_responsive_tab_profile"> <core-icon icon="social:post-linkedin"></core-icon> </a>
+					</core-tooltip>
+
+					<core-tooltip label="Github Profile" position="top" large class="fancy">
+
+						<a target="_blank" href="https://github.com/rafistrauss"> <core-icon icon="social:post-github"></core-icon> </a>
+					</core-tooltip>
+
+					<core-tooltip label="StackOverflow Profile" position="top" large class="fancy">
+
+						<a target="_blank" href="http://stackoverflow.com/users/1851509/general-twyckenham"> <i class="fa fa-stack-overflow"></i> </a>
+					</core-tooltip>
+
+					<core-tooltip label="Resume" position="top" large class="fancy">
+
+						<a target="_blank" href="https://docs.google.com/document/d/1KZd-OyD7IhahrrGtHKbCAjFxhUFUTIRCXjL8mCLg_LA/edit?usp=sharing"> <core-icon icon="drive-document"></core-icon> </a>
+					</core-tooltip
+
+				</div>
 
 				<br />
-				<a target="_blank" href="https://www.linkedin.com/profile/view?id=153345648&trk=nav_responsive_tab_profile"> <core-icon icon="social:post-linkedin"></core-icon> </a>
-				<a target="_blank" href="https://github.com/rafistrauss"> <core-icon icon="social:post-github"></core-icon> </a>
-				<a target="_blank" href="http://stackoverflow.com/users/1851509/general-twyckenham">
-					<i class="fa fa-stack-overflow"></i> 
-					</a>
-
-				<br />
-
 			</div>
+
+		</div>
 		</div>
 
 		<project-display></project-display>
@@ -407,7 +512,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			<a href="mailto:raphael.strauss@hotmail.com"> <paper-fab mini icon="mail" class="no" ></paper-fab> <span>raphael.strauss@hotmail.com</span></a>
 			<br />
 			<a href="tel:18722286724"> <paper-fab mini icon="settings-phone"></paper-fab><span>872-228-6724</span></a>
-			
+
 		</div>
 
 	</body>

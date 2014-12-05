@@ -12,17 +12,46 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 	<head>
 		<title>Rafi Strauss</title>
 
+		<link rel="icon" type="image/ico" href="images/Capture.ico" />
+		
 		<script src="bower_components/platform/platform.js"></script>
 		<link href="bower_components/core-animated-pages/core-animated-pages.html" rel="import">
 
 		<link rel="import" href="bower_components/core-icon/core-icon.html">
 		<link rel="import" href="bower_components/core-icons/core-icons.html">
 		<link rel="import" href="bower_components/core-icons/social-icons.html">
+        <link rel="import" href="bower_components/core-icons/communication-icons.html">
 		<link rel="import" href="bower_components/paper-fab/paper-fab.html" />
-		<link rel="import" href="bower_components/core-tooltip/core-tooltip.html" />
+		<link rel="import" href="bower_components/paper-button/paper-button.html" />
 
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="jquery-2.1.0.min.js"></script>
+		
+		
+		<script>
+			
+			$(document).on('click', function(event) {
+			  if (!$(event.target).closest('project-display').length) {
+			    closeProject();
+			  }
+			});
+			
+			$(document).on('keydown', function(event) {
+				// console.log(event);
+				// console.log(event.keycode);
+				if(event.keyCode === 27) {
+					closeProject();
+				}				
+			});
+			
+		
+			function closeProject() {
+				document.getElementsByTagName('project-display')[0].transition();
+			}
+		</script>
 
 		<style>
 			body {
@@ -54,9 +83,19 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 			#authorTitle {
 				font-size: 200%;
 			}
-
-			#profileLinks core-tooltip {
+            
+            #profileLinks {
+                position: absolute; 
+                top: 600px;
+                width: 100%;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+			#profileLinks a {
 				margin: 1%;
+                
 			}
 
 			.contact {
@@ -88,7 +127,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				text-decoration: underline;
 			}
 
-			core-icon[icon="social:post-linkedin"], core-icon[icon="social:post-github"], core-icon[icon="drive-document"] {
+			core-icon[icon="social:post-linkedin"], core-icon[icon="social:post-github"], core-icon[icon="drive-document"], 
+            
+core-icon[icon="communication:phone"], core-icon[icon="mail"] {
 				width: 32px;
 				height: 32px;
 			}
@@ -138,7 +179,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<style>
 					.chip-container {
 						position: absolute;
-						top: 375px;
+						top: 315px;
 						right: 0;
 						left: 0;
 						text-align: center;
@@ -189,7 +230,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					}
 
 					#details {
-						padding: 200px 10% 0;
+						margin: 200px 10% 0;
 					}
 
 					.card {
@@ -202,7 +243,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					}
 
 					.card-left {
-						width: 400px;
+						width: 600px;
 					}
 
 					.card-right {
@@ -244,7 +285,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 							<template repeat="{{items as item}}">
 
 								<div class="chip" hero-id="{{item.technologies}}-{{item.project}}" hero?="{{selectedProject === item }}">
-									<div class="chip-top" style="background:{{item.color}};" hero-id="{{item.technologies}}-{{item.project}}-art" hero?="{{selectedProject === item}}"></div>
+									<div class="chip-top" style="background-image: url('images/{{item.imageLink}}'); background-size: contain; background-repeat: no-repeat; background-position: 0 50%;
+									 " hero-id="{{item.technologies}}-{{item.project}}-art" hero?="{{selectedProject === item}}"></div>
 									<div class="chip-bottom">
 										<div class="chip-project-title">
 											{{item.project}}
@@ -263,20 +305,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 					<section id="details">
 
-						<div class="card" layout horizontal hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}" hero on-tap="{{transition}}">
-							<div class="card-left" style="background-image: url('images/{{selectedProject.imageLink}}'); background-size: contain; background-repeat: no-repeat; " hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}-art" hero></div>
+						<div class="card" layout horizontal hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}" hero >
+							<div class="card-left" 
+							style="background-image: url('images/{{selectedProject.imageLink}}'); background-size: contain; background-repeat: no-repeat; background-position: 0 50%; " 
+							hero-id="{{selectedProject.technologies}}-{{selectedProject.project}}-art" hero></div>
 							<div class="card-right" flex>
 								<div layout horizontal center>
-									<div>
-										<div class="card-icon" style="background:{{selectedProject.color}};"></div>
-									</div>
 									<div flex>
 										<div class="card-project-title">
 											{{selectedProject.project}}
 										</div>
 										<div class="card-project-technologies">
-											<b>Uses:</b> {{selectedProject.technologies}}
+											<b>Technologies used:</b> {{selectedProject.technologies}}
 										</div>
+
+									</div>
+									<div>
+										<paper-button onclick="closeProject()">
+											X
+										</paper-button>
 
 									</div>
 								</div>
@@ -292,12 +339,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 										The public repo is here: <a href="{{selectedProject.codeLink}}" target="_blank">{{selectedProject.project}} Repo</a>
 									</div>
 								</template>
-								<template if="{{!selectedProject.codeLink}}">
-									<div class="projectDescription" >
-										Unfortunately I couldn't make the repo for this project public.
-									</div>
-								</template>
-
+								
 							</div>
 						</div>
 
@@ -339,6 +381,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 					selectedProject : null,
 
 					transition : function(e) {
+
 						if (this.page === 0 && e.target.templateInstance.model.item) {
 							this.selectedProject = e.target.templateInstance.model.item;
 							this.page = 1;
@@ -475,30 +518,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 				<br />
 				<img src="images/rafi_3.png" />
 				<br />
-				<em> I love building clean, simple, and awesome apps. Check out my profiles and resume: </em>
-
-				<div id="profileLinks" >
-
-					<core-tooltip label="LinkedIn Profile" position="top" large class="fancy">
-						<a target="_blank" href="https://www.linkedin.com/profile/view?id=153345648&trk=nav_responsive_tab_profile"> <core-icon icon="social:post-linkedin"></core-icon> </a>
-					</core-tooltip>
-
-					<core-tooltip label="Github Profile" position="top" large class="fancy">
-
-						<a target="_blank" href="https://github.com/rafistrauss"> <core-icon icon="social:post-github"></core-icon> </a>
-					</core-tooltip>
-
-					<core-tooltip label="StackOverflow Profile" position="top" large class="fancy">
-
-						<a target="_blank" href="http://stackoverflow.com/users/1851509/general-twyckenham"> <i class="fa fa-stack-overflow"></i> </a>
-					</core-tooltip>
-
-					<core-tooltip label="Resume" position="top" large class="fancy">
-
-						<a target="_blank" href="https://docs.google.com/document/d/1KZd-OyD7IhahrrGtHKbCAjFxhUFUTIRCXjL8mCLg_LA/edit?usp=sharing"> <core-icon icon="drive-document"></core-icon> </a>
-					</core-tooltip
-
-				</div>
+				<em> I love building clean, simple, and awesome apps. Here are some of the most recent projects I've worked on: </em>
 
 				<br />
 			</div>
@@ -507,13 +527,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 		</div>
 
 		<project-display></project-display>
+		
+		<div id="profileLinks" >
 
+					<a target="_blank" href="https://www.linkedin.com/profile/view?id=153345648&trk=nav_responsive_tab_profile"> <core-icon icon="social:post-linkedin"></core-icon> </a>
+
+					<a target="_blank" href="https://github.com/rafistrauss"> <core-icon icon="social:post-github"></core-icon> </a>
+
+					<a target="_blank" href="http://stackoverflow.com/users/1851509/general-twyckenham"> <i class="fa fa-stack-overflow"></i> </a>
+
+					<a target="_blank" href="https://docs.google.com/document/d/1KZd-OyD7IhahrrGtHKbCAjFxhUFUTIRCXjL8mCLg_LA/edit?usp=sharing"> <core-icon icon="drive-document"></core-icon> </a>
+            
+            <a target="_blank" href="mailto:rafi.a.strauss@gmail.com"> <core-icon icon="mail"></core-icon> </a>
+            <a href="tel:18722286724"> <core-icon icon="communication:phone"></core-icon> </a>
+
+				</div>
+
+<!--
 		<div class="contact">
-			<a href="mailto:raphael.strauss@hotmail.com"> <paper-fab mini icon="mail" class="no" ></paper-fab> <span>raphael.strauss@hotmail.com</span></a>
+			<a href="mailto:rafi.a.strauss@gmail.com"> <paper-fab mini icon="mail" class="no" ></paper-fab> <span>rafi.a.strauss@gmail.com</span></a>
 			<br />
 			<a href="tel:18722286724"> <paper-fab mini icon="settings-phone"></paper-fab><span>872-228-6724</span></a>
 
 		</div>
+-->
 
 	</body>
 </html>

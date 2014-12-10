@@ -1,4 +1,4 @@
-rafistrauss.github.io
+[rafistrauss.github.io](http://rafistrauss.github.io/)
 =====================
 
 Homepage for Github pages, built with [Polymer](https://www.polymer-project.org/), an awesome new approach to web development.

@@ -274,6 +274,10 @@ core-icon[icon="communication:phone"], core-icon[icon="mail"] {
 						text-decoration: underline;
 					}
 
+					.invalidProject {
+						text-decoration: line-through;
+					}
+
 				</style>
 
 				<core-animated-pages selected="{{page}}" transitions="hero-transition" on-core-animated-pages-transition-end="{{complete}}">
@@ -331,9 +335,21 @@ core-icon[icon="communication:phone"], core-icon[icon="mail"] {
 								<div class="projectDescription">
 									{{selectedProject.description}}
 								</div>
-								<div class="projectDescription">
-									You can see this project here: <a href="{{selectedProject.projectLink}}" target="_blank">{{selectedProject.project}}</a>
-								</div>
+								<template if="{{selectedProject.needsRehosting}}">
+									<div class="projectDescription invalidProject" >
+										You can see this project here: <a href="">{{selectedProject.project}}</a>
+									</div>
+									<div>
+										This project needs to be rehosted.
+									</div>
+
+								</template>
+								<template if="{{!selectedProject.needsRehosting}}">
+									<div class="projectDescription">
+										You can see this project here: <a href="{{selectedProject.projectLink}}" target="_blank">{{selectedProject.project}}</a>
+									</div>
+								</template>
+
 								<template if="{{selectedProject.codeLink}}">
 									<div class="projectDescription" >
 										The public repo is here: <a href="{{selectedProject.codeLink}}" target="_blank">{{selectedProject.project}} Repo</a>
@@ -359,7 +375,8 @@ core-icon[icon="communication:phone"], core-icon[icon="mail"] {
 						color : '#590000',
 						description : "I had the pleasure of co-founding this custom-made clothing startup with a friend of mine. \n Anything technology related was my responsibility, and as we are an online-only clothing store, I had the opportunity to learn about and utilize many different aspects of web development.",
 						imageLink : "Fitted-Threads.jpg",
-						projectLink : "https://fittedthreads.com"
+						projectLink : "https://fittedthreads.com",
+						needsRehosting: true
 					}, {
 						technologies : 'Angular.js',
 						project : 'SMS Tool',
@@ -376,6 +393,14 @@ core-icon[icon="communication:phone"], core-icon[icon="mail"] {
 						imageLink : "Distance-Calculator.jpg",
 						projectLink : "http://rafistrauss.github.io/NearSchoolFinder/",
 						codeLink : "https://github.com/rafistrauss/NearSchoolFinder"
+					}, {
+						technologies : 'Javascript, CSS3',
+						project : 'Stylized Checkboxes',
+						color : '#9EF785',
+						description : "This is mostly in place of a lorem ipsum for now, but basically I grew increasingly bored with the default checkboxes that browsers render (which, as most any Web Developer knows, are practically impossible to style). So I decided to work on a simple method for replacing the checkboxes with more easily stylizable elements and this is the result.",
+						imageLink : "stylized-checkbox.jpg",
+						projectLink : "http://rafistrauss.github.io/stylized-checkbox/",
+						codeLink : "https://github.com/rafistrauss/stylized-checkbox"
 					}],
 
 					selectedProject : null,

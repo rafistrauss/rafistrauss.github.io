@@ -8,6 +8,8 @@
 
 
 require_once('authorizer.php');
+require_once('patchBuilder.php');
+
 
 $patchGenerator = new patchBuilder();
 

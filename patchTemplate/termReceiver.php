@@ -23,8 +23,10 @@ foreach($separateTerms as $separateTerm) {
     $termKeyId = $termTokens[0];
     unset($termTokens[0]);
     $termText = implode(" ", $termTokens);
-    $termsArray[] = array($termKeyId, $termText);
+    $termsArray[] = array('termKeyId' => $termKeyId, 'termText' => $termText);
 }
+
+$patchDescription = "Insert terms";
 
 $patchTemplate = $patchGenerator->patchTemplate($patchNumber, $patchDescription, $termsArray);
 

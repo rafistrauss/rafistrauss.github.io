@@ -11,7 +11,7 @@ else {
     $date = date('Y-m-d H:i:s');
     file_put_contents("log.log", "--------------- $date - Received a payload of: " . print_r($_POST, true) . "\n", FILE_APPEND );
     sleep(5);
-    header("HTTP/1.0 403 Forbidden");
     echo "Not authorized";
+    header("HTTP/1.0 403 Forbidden");
     exit;
 }

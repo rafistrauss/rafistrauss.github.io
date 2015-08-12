@@ -8,18 +8,23 @@
  */
 class claimr
 {
-    function __construct() {
+    private $tableMapping;
 
+    function __construct() {
+        $this->tableMapping = [
+            "patch" => "patches"
+        ];
     }
 
     function claimEntity($db, $entityType, $claimer, $branch = "") {
         $query = $db->prepare("INSERT INTO $entityType (claimer, branch, date) VALUES (:claimer, :branch, now());");
         $res = $query->execute([":claimer" => $claimer, ":branch" => $branch]);
         if($res) {
-            echo $db->lastInsertId();
+            return $db->lastInsertId();
         }
         else {
             echo error_get_last();
+            return false;
         }
     }
 
@@ -27,10 +32,15 @@ class claimr
         $query = $db->prepare("INSERT INTO $entityType VALUES (:id, :claimer, :branch, now());");
         $res = $query->execute([":id" => $id, ":claimer" => $claimer, ":branch" => $branch]);
         if($res) {
-            echo $db->lastInsertId();
+            return $db->lastInsertId();
         }
         else {
             echo error_get_last();
+            return false;
         }
+    }
+
+    function tableMapping($passedEntity) {
+        return $this->tableMapping[$passedEntity];
     }
 }

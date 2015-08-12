@@ -25,26 +25,21 @@ if(isset($arr[2])) {
 }
 
 $claimr = new claimr();
-$patchNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "Rafi", $branchName);
+$patchNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName", $branchName);
 
 $slackBotUrl = "https://marsb.slack.com/services/hooks/slackbot?token=WLjq0DPnWUsC6H4bVQo9sE4Z&channel=%23patches";
 
 
-// what post fields?
-$fields = array(
-    'data' => "$userName claimed $entityType #$patchNumber"
-);
+$data = "$userName claimed $entityType #$patchNumber";
 
 // build the urlencoded data
-$postvars = http_build_query($fields);
 
 // open connection
 $ch = curl_init();
 
 // set the url, number of POST vars, POST data
 curl_setopt($ch, CURLOPT_URL, $slackBotUrl);
-curl_setopt($ch, CURLOPT_POST, count($fields));
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postvars);
+curl_setopt($ch, CURLOPT_TRANSFERTEXT, $data);
 
 // execute post
 $result = curl_exec($ch);

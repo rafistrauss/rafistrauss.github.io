@@ -43,4 +43,8 @@ class claimr
     function tableMapping($passedEntity) {
         return $this->tableMapping[$passedEntity];
     }
+
+    function lastPatch($db) {
+        return $db->query('SELECT max(id) FROM patches')->fetch(PDO::FETCH_NUM)[0];
+    }
 }

@@ -11,7 +11,7 @@ class patchBuilder
     }
 
     function patchTemplate($patchNumber, $patchDescription, $terms = null) {
-        $patchTemplate = "\n\n#Patch " . $patchNumber . " - " .
+        $patchTemplate = "Patch #" . $patchNumber . " - " .
             $patchDescription . "\n\n" . $this->termsTemplate($terms) . "\n\n" .
             "INSERT INTO patchhistory VALUES (" . $patchNumber . ", CURRENT_TIMESTAMP(), '"
             . $patchDescription . "' );";

@@ -45,6 +45,12 @@ class claimr
     }
 
     function lastPatch($db) {
-        return $db->query('SELECT max(id) FROM patches')->fetch(PDO::FETCH_NUM)[0];
+        $res = $db->query('SELECT max(id) FROM patches');
+        if($res !== false) {
+            return $res->fetch(PDO::FETCH_NUM)[0];
+        }
+        else {
+            return "Failed to get last patch";
+        }
     }
 }

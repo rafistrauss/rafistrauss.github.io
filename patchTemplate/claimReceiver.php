@@ -34,6 +34,8 @@ $data = "$userName claimed $entityType #$patchNumber";
 
 // build the urlencoded data
 
+$urlenc = urlencode($data);
+
 // open connection
 $ch = curl_init();
 

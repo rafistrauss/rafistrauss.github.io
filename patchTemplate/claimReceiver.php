@@ -8,6 +8,7 @@
 
 require_once('authorizer.php');
 require_once('claimr.php');
+require_once['phpSlackbot/SlackBot.php'];
 
 $payload = $_POST['text'];
 $userName = $_POST['user_name'];
@@ -42,6 +43,7 @@ if(isset($arr[1])) {
 }
 
 $claimr = new claimr();
+$slackBot = new \lygav\slackbot\SlackBot($slackBotUrl);
 
 for($i = 0; $i < $numberOfEntitiesToClaim; $i++) {
 
@@ -51,23 +53,7 @@ for($i = 0; $i < $numberOfEntitiesToClaim; $i++) {
 
 
     $data = "$userName claimed $entityType #$patchNumber";
-
-// build the urlencoded data
-
-    $urlenc = urlencode($data);
-
-// open connection
-    $ch = curl_init();
-
-// set the url, number of POST vars, POST data
-    curl_setopt($ch, CURLOPT_URL, $slackBotUrl);
-    curl_setopt($ch, CURLOPT_TRANSFERTEXT, $data);
-
-// execute post
-    $result = curl_exec($ch);
-
-// close connection
-    curl_close($ch);
+    $slackBot->text($data)->send();
 
     $newPayload = "$patchNumber $description";
 

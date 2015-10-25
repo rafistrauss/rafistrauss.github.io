@@ -6,7 +6,10 @@
  * Time: 12:36 PM
  */
 
+
+
 if(isset($_POST)) {
-    file_put_contents("gitlog.log", print_r($_POST, true) .  "\n", FILE_APPEND);
+    $date = date("Y m D H:i:s");
+    file_put_contents("gitlog.log", "Hit at $date" .  print_r($_POST, true) .  "\n", FILE_APPEND);
 }
 

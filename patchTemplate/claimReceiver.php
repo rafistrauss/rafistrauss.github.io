@@ -11,9 +11,10 @@ require_once('claimr.php');
 
 $payload = $_POST['text'];
 $userName = $_POST['user_name'];
+$domain = $_POST['team_domain'];
 
 $date = date("Y m D H:i:s");
-file_put_contents("log.log", "Hit at $date \n\n", FILE_APPEND);
+file_put_contents("log.log", "Hit at $date from $domain \n\n", FILE_APPEND);
 
 $arr = explode(' ', trim($payload));
 $entityType = $arr[0];

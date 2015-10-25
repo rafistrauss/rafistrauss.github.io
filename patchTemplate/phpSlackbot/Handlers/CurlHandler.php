@@ -4,6 +4,7 @@
 namespace lygav\slackbot\Handlers;
 
 use lygav\slackbot\SlackRequest;
+require_once('RequestHandler.php');
 
 class CurlHandler implements RequestHandler
 {

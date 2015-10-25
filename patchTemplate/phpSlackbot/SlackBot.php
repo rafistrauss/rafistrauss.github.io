@@ -7,6 +7,7 @@ use lygav\slackbot\Exceptions\SlackRequestException;
 use lygav\slackbot\Handlers\CurlHandler;
 
 require_once('Message.php');
+require_once('SlackRequest.php');
 
 class SlackBot
 {

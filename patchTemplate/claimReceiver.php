@@ -8,7 +8,7 @@
 
 require_once('authorizer.php');
 require_once('claimr.php');
-require_once['phpSlackbot/SlackBot.php'];
+require_once('phpSlackbot/SlackBot.php');
 
 $payload = $_POST['text'];
 $userName = $_POST['user_name'];

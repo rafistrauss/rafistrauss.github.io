@@ -6,9 +6,14 @@
  * Time: 12:36 PM
  */
 
+require_once('GitHub_WebHook.php');
+$secret = getenv("SECRET_TOKEN");
+$date = date("Y m D H:i:s");
 
-if(isset($_POST)) {
-    $date = date("Y m D H:i:s");
-    file_put_contents("gitlog.log", "Hit at $date" .  print_r($_POST, true) .  "\n", FILE_APPEND);
+$GHWH = new GitHub_WebHook();
+if($GHWH->ValidateHubSignature($secret)) {
+    exec('git pull');
+    file_put_contents('gitlog.log', "Pulled at $date", FILE_APPEND);
 }
+
 

@@ -6,6 +6,8 @@ namespace lygav\slackbot;
 use lygav\slackbot\Exceptions\SlackRequestException;
 use lygav\slackbot\Handlers\CurlHandler;
 
+require_once('Message.php');
+
 class SlackBot
 {
 	private $text;
@@ -23,7 +25,7 @@ class SlackBot
 			unset($options['handler']);
 		}
 		$this->global_options = $options;
-		require_once('Message.php');
+
 	}
 
 	public function text($text)

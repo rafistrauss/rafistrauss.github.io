@@ -2,6 +2,8 @@
 
 namespace lygav\slackbot;
 
+require_once('Transferrable.php');
+
 class Message implements Transferrable
 {
     protected $text;

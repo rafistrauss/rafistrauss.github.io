@@ -12,7 +12,11 @@ class claimr
 
     function __construct() {
         $this->tableMapping = [
-            "patch" => "patches"
+            "patch" => "patches",
+            "term" => "terms",
+            "template" => "templates",
+            "resource" => "resourceTypes",
+            "resourceType" => "resourceTypes"
         ];
     }
 
@@ -41,7 +45,14 @@ class claimr
     }
 
     function tableMapping($passedEntity) {
-        return $this->tableMapping[$passedEntity];
+        if(array_key_exists($passedEntity, $this->tableMapping)) {
+            return $this->tableMapping[$passedEntity];
+        }
+        else {
+            echo "Table doesn't exist";
+            return false;
+        }
+
     }
 
     function lastPatch($db) {

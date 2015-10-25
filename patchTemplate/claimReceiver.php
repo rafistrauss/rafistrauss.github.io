@@ -13,6 +13,11 @@ $payload = $_POST['text'];
 $userName = $_POST['user_name'];
 $domain = $_POST['team_domain'];
 
+$slackBotUrl = "https://marsb.slack.com/services/hooks/slackbot?token=WLjq0DPnWUsC6H4bVQo9sE4Z&channel=%23patches";
+if($domain === "proseeder") {
+    $slackBotUrl = "https://proseeder.slack.com/services/hooks/slackbot?token=lGe4xkszgrq4C81pp7GqlEo9&channel=%23autobuildtest";
+}
+
 $date = date("Y m D H:i:s");
 file_put_contents("log.log", "Hit at $date from $domain \n\n", FILE_APPEND);
 
@@ -42,7 +47,7 @@ for($i = 0; $i < $numberOfEntitiesToClaim; $i++) {
 
     $patchNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName");
 
-    $slackBotUrl = "https://marsb.slack.com/services/hooks/slackbot?token=WLjq0DPnWUsC6H4bVQo9sE4Z&channel=%23patches";
+
 
 
     $data = "$userName claimed $entityType #$patchNumber";

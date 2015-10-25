@@ -15,5 +15,8 @@ if($GHWH->ValidateHubSignature($secret)) {
     exec('git pull');
     file_put_contents('gitlog.log', "Pulled at $date", FILE_APPEND);
 }
+else {
+    file_put_contents('gitlog.log', "Failed at $date", FILE_APPEND);
+}
 
 

@@ -23,6 +23,7 @@ class SlackBot
 			unset($options['handler']);
 		}
 		$this->global_options = $options;
+		require_once('Message.php');
 	}
 
 	public function text($text)

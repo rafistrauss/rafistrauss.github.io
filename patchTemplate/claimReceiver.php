@@ -43,7 +43,7 @@ if(isset($arr[1])) {
 }
 
 $claimr = new claimr();
-$slackBot = new SlackBot($slackBotUrl);
+$slackBot = new \lygav\slackbot\SlackBot($slackBotUrl);
 
 for($i = 0; $i < $numberOfEntitiesToClaim; $i++) {
 

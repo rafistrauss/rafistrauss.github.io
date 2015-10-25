@@ -10,6 +10,7 @@ require_once('GitHub_WebHook.php');
 $secret = getenv("SECRET_TOKEN");
 $date = date("Y m D H:i:s");
 
+
 $GHWH = new GitHub_WebHook();
 if($GHWH->ValidateHubSignature($secret)) {
     exec('git pull');

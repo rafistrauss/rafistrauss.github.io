@@ -45,7 +45,7 @@ else {
             $entityNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName");
             $patchNumber = $claimr->claimEntity($db, $claimr->tableMapping("patch"), "$userName");
             $_POST['text'] = "$patchNumber $entityNumber $description";
-            include 'patchReceiver.php';
+            include 'termReceiver.php';
             break;
         default:
             $entityNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName");

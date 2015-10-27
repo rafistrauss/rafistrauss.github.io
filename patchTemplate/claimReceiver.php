@@ -44,8 +44,8 @@ else {
         case "termkey":
             $entityNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName");
             $patchNumber = $claimr->claimEntity($db, $claimr->tableMapping("patch"), "$userName");
-            $_POST['text'] = "$patchNumber $entityNumber $description";
-            include 'termReceiver.php';
+            $_POST['text'] = "$patchNumber~$entityNumber~$description";
+            include 'termHandler.php';
             break;
         default:
             $entityNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName");

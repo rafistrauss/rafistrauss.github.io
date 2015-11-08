@@ -44,6 +44,7 @@ else {
         case "termkey":
             $entityNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName");
             $patchNumber = $claimr->claimEntity($db, $claimr->tableMapping("patch"), "$userName");
+            $slackBot->text($userName . " claimed patch #" . $patchNumber)->send();
             $_POST['text'] = "$patchNumber~$entityNumber~$description";
             include 'termHandler.php';
             break;

@@ -20,6 +20,27 @@ class claimr
         ];
     }
 
+    function setNextEntityId($db, $entityType, $claimer, $entityId, $branch = "") {
+
+        if($this->lastEntity($db, $entityType) < $entityId) {
+
+            $query = $db->prepare("INSERT INTO $entityType (id, claimer, branch, date) VALUES (:entityId, :claimer, :branch, now());");
+            $res = $query->execute([":entityId" => $entityId, ":claimer" => $claimer, ":branch" => $branch]);
+            if ($res) {
+//                return $db->lastInsertId();
+                echo "Successfully set next value";
+                return true;
+            } else {
+                echo error_get_last();
+                return false;
+            }
+        }
+        else {
+            echo "New id is smaller than next available one";
+            return false;
+        }
+    }
+
     function claimEntity($db, $entityType, $claimer, $branch = "") {
         $query = $db->prepare("INSERT INTO $entityType (claimer, branch, date) VALUES (:claimer, :branch, now());");
         $res = $query->execute([":claimer" => $claimer, ":branch" => $branch]);
@@ -53,6 +74,18 @@ class claimr
             return false;
         }
 
+    }
+
+    function lastEntity($db, $entityType) {
+        $tableName = $this->tableMapping($entityType);
+        $res = $db->query("SELECT max(id) FROM $tableName");
+        if($res !== false) {
+            return $res->fetch(PDO::FETCH_NUM)[0];
+        }
+        else {
+            echo "Failed to get last $entityType";
+            return false;
+        }
     }
 
     function lastPatch($db) {

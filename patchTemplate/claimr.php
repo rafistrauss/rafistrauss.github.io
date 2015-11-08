@@ -21,17 +21,23 @@ class claimr
     }
 
     function setNextEntityId($db, $entityType, $claimer, $entityId, $branch = "") {
-
+        $table = $this->tableMapping($entityType);
         if($this->lastEntity($db, $entityType) < $entityId) {
 
-            $query = $db->prepare("INSERT INTO $entityType (id, claimer, branch, date) VALUES (:entityId, :claimer, :branch, now());");
+            $query = $db->prepare("INSERT INTO $table (id, claimer, branch, date) VALUES (:entityId, :claimer, :branch, now());");
             $res = $query->execute([":entityId" => $entityId, ":claimer" => $claimer, ":branch" => $branch]);
+
             if ($res) {
 //                return $db->lastInsertId();
+                file_put_contents("log.log", "Set next entity\n", FILE_APPEND);
                 echo "Successfully set next value";
                 return true;
             } else {
-                echo error_get_last();
+
+                file_put_contents("log.log", "Failed: " . print_r(error_get_last(), true) . "\n" .
+                    print_r($db->errorInfo(), true), FILE_APPEND);
+
+                echo print_r(error_get_last(), true);
                 return false;
             }
         }

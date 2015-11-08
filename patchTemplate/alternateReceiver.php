@@ -33,4 +33,6 @@ if($claimr->setNextEntityId($db, $entityType, $userName, $id)) {
     $slackBot->text($data)->send();
 }
 
-
+else {
+    echo "Complete but failed";
+}

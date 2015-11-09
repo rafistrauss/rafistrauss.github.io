@@ -61,7 +61,7 @@ class claimr
 
     function claimEntities($db, $entityType, $claimer, $numberOfEntities, $branch = "") {
         $queryString = "";
-        for($i = 1; $i < $numberOfEntities; $i++) {
+        for($i = 0; $i < $numberOfEntities; $i++) {
             $queryString .= "INSERT INTO $entityType (claimer, branch, date) VALUES (:claimer, :branch, now());";
         }
         $query = $db->prepare("{$queryString}");

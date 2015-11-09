@@ -67,7 +67,7 @@ if(is_numeric($arr[0])) {
             $startNumber = $entityNumbers[0];
             $endNumber = $entityNumbers[sizeof($entityNumbers) -1];
 
-            for($i = 0; $i < sizeof($entityNumbers); $i++) {
+            for($i = 0; $i < sizeof($entityNumbers)-1; $i++) {
                 $termText = "";
                 if(isset($separateTerms[$i])) {
                      $termText = $separateTerms[$i];

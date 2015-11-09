@@ -75,6 +75,7 @@ if(is_numeric($arr[0])) {
                 }
                 $resultingTermString .= $entityNumbers[$i] . " " . $termText . ",";
             }
+            $resultingTermString = substr($resultingTermString, 0, -1); //Remove trailing comma
 
             $_POST['text'] = "$resultingTermString;$patchNumber";
             include 'termReceiver.php';

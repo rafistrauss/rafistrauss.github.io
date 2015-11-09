@@ -27,8 +27,59 @@ $claimr = new claimr();
 $slackBot = new \lygav\slackbot\SlackBot($slackBotUrl);
 $entityNumber = -1;
 
-if(is_numeric($arr[0])) {
+/**
+ * @param $claimr
+ * @param $db
+ * @param $entityType
+ * @param $userName
+ * @param $description
+ * @return mixed
+ */
+function claimSinglePatch($claimr, $db, $entityType, $userName, $description)
+{
+    $entityNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName");
+    $_POST['text'] = "$entityNumber $description";
+    include 'patchReceiver.php';
+    return $entityNumber;
+}
 
+if(is_numeric($arr[0])) {
+    $numberOfEntities = $arr[0];
+    $entityType = $arr[1];
+    switch($entityType) {
+        case "patch":
+        case "patches":
+
+            break;
+        case "term":
+        case "terms":
+        case "termkey":
+        case "termkeys":
+            unset($arr[0]);
+            unset($arr[1]);
+            $termstring = implode("", $arr);
+            $separateTerms = explode(",", $termstring);
+            $entityNumbers = $claimr->claimEntities($db, "terms", $userName, $numberOfEntities);
+            $patchNumber = $claimr->claimEntity($db, $claimr->tableMapping("patch"), "$userName");
+            $slackBot->text($userName . " claimed patch #" . $patchNumber)->send();
+
+            $resultingTermString = "";
+            $startNumber = $entityNumbers[0];
+            $endNumber = $entityNumbers[sizeof($entityNumbers) -1];
+
+            for($i = 0; $i < sizeof($entityNumbers); $i++) {
+                $termText = "";
+                if(isset($separateTerms[$i])) {
+                     $termText = $separateTerms[$i];
+                }
+                $resultingTermString .= $entityNumbers[$i] . " " . $termText . ",";
+            }
+
+            $_POST['text'] = "$resultingTermString;$patchNumber";
+            include 'termReceiver.php';
+            $data = "$userName claimed termkeys $startNumber - $endNumber";
+            break;
+    }
 }
 else {
     $entityType = $arr[0];
@@ -36,9 +87,7 @@ else {
     $description = implode(" ", $arr);
     switch($entityType) {
         case "patch":
-            $entityNumber = $claimr->claimEntity($db, $claimr->tableMapping($entityType), "$userName");
-            $_POST['text'] = "$entityNumber $description";
-            include 'patchReceiver.php';
+            $entityNumber = claimSinglePatch($claimr, $db, $entityType, $userName, $description);
             break;
         case "term":
         case "termkey":

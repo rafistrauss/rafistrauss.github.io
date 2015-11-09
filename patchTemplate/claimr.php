@@ -59,6 +59,28 @@ class claimr
         }
     }
 
+    function claimEntities($db, $entityType, $claimer, $numberOfEntities, $branch = "") {
+        $queryString = "";
+        for($i = 0; $i < $numberOfEntities; $i++) {
+            $queryString .= "INSERT INTO $entityType (claimer, branch, date) VALUES (:claimer, :branch, now());";
+        }
+        $query = $db->prepare("{$queryString}");
+        $res = $query->execute([":claimer" => $claimer, ":branch" => $branch]);
+        if($res) {
+            $itemsArray = array();
+            $lastInsertId = $db->lastInsertId();
+            $firstInsertId = $lastInsertId - $numberOfEntities;
+            for($i = $firstInsertId; $i <= $lastInsertId; $i++) {
+                $itemsArray[] = $i;
+            }
+            return $itemsArray;
+        }
+        else {
+            echo error_get_last();
+            return false;
+        }
+    }
+
     function claimEntityWithId($db, $entityType, $id, $claimer, $branch = "") {
         $query = $db->prepare("INSERT INTO $entityType VALUES (:id, :claimer, :branch, now());");
         $res = $query->execute([":id" => $id, ":claimer" => $claimer, ":branch" => $branch]);

@@ -80,7 +80,6 @@ class claimr
             $this->logError( print_r(error_get_last(), true));
             $this->logError(print_r($db->errorInfo(), true));
             $this->logError( "Query string: " . $queryString);
-            $this->logError("Query: " . $query);
             $this->logError("Array: " . print_r($valueArray, true));
             return false;
         }

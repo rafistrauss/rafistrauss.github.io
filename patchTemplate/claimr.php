@@ -61,6 +61,7 @@ class claimr
 
         $query = $db->prepare(" $start INSERT INTO $entityType (id, claimer, branch, date) VALUES (@maxid + 1, :claimer, :branch, now());");
         $res = $query->execute([":claimer" => $claimer, ":branch" => $branch]);
+        var_dump($res);
         if($res) {
             return $db->lastInsertId();
         }

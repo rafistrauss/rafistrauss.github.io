@@ -33,6 +33,7 @@ if(isset($arr[2]) && $arr[2] === "override") {
 }
 
 $data = $claimr->unclaimEntity($db, $entityType, $entityNumber, $userName, $override);
+echo $data;
 if($data) {
     $slackBot->text($data)->send();
 }

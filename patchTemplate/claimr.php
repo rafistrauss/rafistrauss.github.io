@@ -64,8 +64,10 @@ class claimr
 
     function unclaimEntity($db, $entityType, $id, $claimer, $override = false) {
 
+        $tableName = $this->tableMapping($entityType);
+
         $queryString = "DELETE FROM :entityType WHERE id = :id";
-        $valueArray = [":entityType" => $entityType, ":id" => $id];
+        $valueArray = [":entityType" => $tableName, ":id" => $id];
 
         if(!$override) {
             $queryString .= " and claimer = :claimer";

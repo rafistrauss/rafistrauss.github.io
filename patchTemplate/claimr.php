@@ -18,6 +18,9 @@ class claimr
             "resource" => "resourceTypes",
             "resourceType" => "resourceTypes"
         ];
+
+        date_default_timezone_set("America/New_York");
+
     }
 
     function setNextEntityId($db, $entityType, $claimer, $entityId, $branch = "") {

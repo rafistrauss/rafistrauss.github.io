@@ -81,7 +81,7 @@ class claimr
             var_dump($db->errorInfo());
             var_dump(error_get_last());
             $this->logError($queryString);
-            $this->logError($valueArray);
+            $this->logError( print_r( $valueArray, true));
             return false;
         }
         else if($res === 0) {

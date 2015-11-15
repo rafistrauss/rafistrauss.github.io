@@ -66,7 +66,7 @@ class claimr
 
         if(!$override) {
             $queryString .= " and claimer = :claimer";
-            array_push($valueArray, [":claimer" => $claimer]);
+            $valueArray[":claimer"] = $claimer;
         }
         $query = $db->prepare($queryString);
         $res = $query->execute($valueArray);

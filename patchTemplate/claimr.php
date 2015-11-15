@@ -59,6 +59,30 @@ class claimr
         }
     }
 
+    function unclaimEntity($db, $entityType, $id, $claimer, $override = false) {
+
+        $queryString = "DELETE FROM :entityType WHERE id = :id";
+        $valueArray = [":entityType" => $entityType, ":id" => $id];
+
+        if(!$override) {
+            $queryString .= " and claimer = :claimer";
+            array_push($valueArray, [":claimer" => $claimer]);
+        }
+        $query = $db->prepare($queryString);
+        $res = $query->execute($valueArray);
+        if($res === false) {
+            echo "There was some error";
+            $this->logError( print_r(error_get_last(), true));
+            return false;
+        }
+        else if($res === 0) {
+            echo "Did not unclaim entity";
+        }
+        else {
+            echo "Unclaimed $entityType $id";
+        }
+    }
+
     function claimEntities($db, $entityType, $claimer, $numberOfEntities, $branch = "") {
         $queryString = "";
         for($i = 0; $i < $numberOfEntities; $i++) {
@@ -124,5 +148,10 @@ class claimr
         else {
             return "Failed to get last patch";
         }
+    }
+
+    function logError($errorMessage) {
+        $beginning = "\n\n" .  date("Y n, d H:i:s");
+        file_put_contents("log.log", $beginning . $errorMessage, FILE_APPEND);
     }
 }

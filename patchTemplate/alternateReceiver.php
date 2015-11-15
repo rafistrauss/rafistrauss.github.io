@@ -14,9 +14,9 @@ $payload = $_POST['text'];
 $userName = $_POST['user_name'];
 $domain = $_POST['team_domain'];
 
-$slackBotUrl = "https://marsb.slack.com/services/hooks/slackbot?token=WLjq0DPnWUsC6H4bVQo9sE4Z&channel=%23patches";
+$slackBotUrl = "https://marsb.slack.com/services/hooks/slackbot?token=$marsbSlackToken&channel=%23patches";
 if($domain === "proseeder") {
-    $slackBotUrl = "https://proseeder.slack.com/services/hooks/slackbot?token=lGe4xkszgrq4C81pp7GqlEo9&channel=%23autobuildtest";
+    $slackBotUrl = "https://proseeder.slack.com/services/hooks/slackbot?token=$proseederSlackToken&channel=%patches-o_houlihan";
 }
 
 $arr = explode(' ', trim($payload));

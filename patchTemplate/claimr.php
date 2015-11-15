@@ -52,13 +52,15 @@ class claimr
     }
 
     function claimEntity($db, $entityType, $claimer, $branch = "") {
-        $query = $db->prepare("INSERT INTO $entityType (claimer, branch, date) VALUES (:claimer, :branch, now());");
+        $start = $this->getBeginningStatement($entityType);
+        $query = $db->prepare(" $start INSERT INTO $entityType (id, claimer, branch, date) VALUES (@maxid, :claimer, :branch, now());");
         $res = $query->execute([":claimer" => $claimer, ":branch" => $branch]);
         if($res) {
             return $db->lastInsertId();
         }
         else {
-            echo error_get_last();
+            echo "Failed";
+            $this->logError(print_r(error_get_last()));
             return false;
         }
     }
@@ -86,8 +88,7 @@ class claimr
             echo "Did not unclaim entity";
         }
         else {
-            echo "Unclaimed $entityType $id";
-            return "Unclaimed $entityType $id";
+            return "$claimer unclaimed $entityType $id";
         }
     }
 
@@ -156,6 +157,12 @@ class claimr
         else {
             return "Failed to get last patch";
         }
+    }
+
+    function getBeginningStatement($entityType) {
+        $table = $this->tableMapping($entityType);
+        $stmt = " SET @maxid := (SELECT max(id) FROM $table);";
+        return $stmt;
     }
 
     function logError($errorMessage) {

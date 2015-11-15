@@ -13,10 +13,15 @@ class claimr
     function __construct() {
         $this->tableMapping = [
             "patch" => "patches",
+            "patches" => "patches",
             "term" => "terms",
+            "terms" => "terms",
             "template" => "templates",
+            "templates" => "templates",
             "resource" => "resourceTypes",
-            "resourceType" => "resourceTypes"
+            "resources" => "resourceTypes",
+            "resourceType" => "resourceTypes",
+            "resourceTypes" => "resourceTypes"
         ];
 
         date_default_timezone_set("America/New_York");

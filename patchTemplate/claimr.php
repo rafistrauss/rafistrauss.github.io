@@ -59,10 +59,8 @@ class claimr
     function claimEntity($db, $entityType, $claimer, $branch = "") {
         $start = $this->getBeginningStatement($entityType);
 
-//        TODO - @maxid + 1
-        $query = $db->prepare(" $start INSERT INTO $entityType (id, claimer, branch, date) VALUES (@maxid, :claimer, :branch, now());");
+        $query = $db->prepare(" $start INSERT INTO $entityType (id, claimer, branch, date) VALUES (@maxid + 1, :claimer, :branch, now());");
         $res = $query->execute([":claimer" => $claimer, ":branch" => $branch]);
-        $this->logError($res);
         if($res) {
             return $db->lastInsertId();
         }

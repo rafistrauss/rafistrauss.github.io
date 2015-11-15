@@ -67,21 +67,19 @@ class claimr
 
         $tableName = $this->tableMapping($entityType);
 
-        $queryString = "DELETE FROM :entityType WHERE id = :id";
-        $valueArray = [":entityType" => $tableName, ":id" => $id];
+        $queryString = "DELETE FROM $tableName WHERE id = :id";
+        $valueArray = [":id" => $id];
 
-//        if(!$override) {
-//            $queryString .= " and claimer = ':claimer'";
-//            $valueArray[":claimer"] = $claimer;
-//        }
+        if(!$override) {
+            $queryString .= " and claimer = ':claimer'";
+            $valueArray[":claimer"] = $claimer;
+        }
         $query = $db->prepare($queryString);
         $res = $query->execute($valueArray);
         if(!$res) {
             echo "There was some error";
-            var_dump($db->errorInfo());
-            var_dump(error_get_last());
-            $this->logError($queryString);
-            $this->logError( print_r( $valueArray, true));
+            $this->logError(print_r($db->errorInfo(), true));
+            $this->logError(print_r(error_get_last(), true));
             return false;
         }
         else if($res === 0) {

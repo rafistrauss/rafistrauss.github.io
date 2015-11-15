@@ -20,9 +20,6 @@ if($domain === "proseeder") {
     $slackBotUrl = "https://proseeder.slack.com/services/hooks/slackbot?token=$proseederSlackToken&channel=%23patches-o_houlihan";
 }
 
-$date = date("Y m D H:i:s");
-file_put_contents("log.log", "Hit at $date from $domain \n\n", FILE_APPEND);
-
 $arr = explode(' ', trim($payload));
 $claimr = new claimr();
 $slackBot = new \lygav\slackbot\SlackBot($slackBotUrl);

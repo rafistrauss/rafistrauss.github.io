@@ -58,6 +58,7 @@ class claimr
 
     function claimEntity($db, $entityType, $claimer, $branch = "") {
         $start = $this->getBeginningStatement($entityType);
+
         $query = $db->prepare(" $start INSERT INTO $entityType (id, claimer, branch, date) VALUES (@maxid, :claimer, :branch, now());");
         $res = $query->execute([":claimer" => $claimer, ":branch" => $branch]);
         if($res) {
@@ -167,6 +168,8 @@ class claimr
     function getBeginningStatement($entityType) {
         $table = $this->tableMapping($entityType);
         $stmt = " SET @maxid := (SELECT max(id) FROM $table);";
+        $this->logError($table);
+        $this->logError($stmt);
         return $stmt;
     }
 

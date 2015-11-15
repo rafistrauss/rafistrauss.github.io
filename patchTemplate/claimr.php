@@ -20,6 +20,7 @@ class claimr
         ];
 
         date_default_timezone_set("America/New_York");
+        error_reporting(1);
 
     }
 
@@ -75,13 +76,10 @@ class claimr
         }
         $query = $db->prepare($queryString);
         $res = $query->execute($valueArray);
-        var_dump($res);
         if(!$res) {
             echo "There was some error";
-            $this->logError( print_r(error_get_last(), true));
-            $this->logError(print_r($db->errorInfo(), true));
-            $this->logError( "Query string: " . $queryString);
-            $this->logError("Array: " . print_r($valueArray, true));
+            var_dump($db->errorInfo());
+            var_dump(error_get_last());
             return false;
         }
         else if($res === 0) {

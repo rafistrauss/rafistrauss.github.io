@@ -80,6 +80,7 @@ class claimr
         }
         else {
             echo "Unclaimed $entityType $id";
+            return "Unclaimed $entityType $id";
         }
     }
 

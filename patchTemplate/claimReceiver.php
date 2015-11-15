@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -26,7 +27,6 @@ $arr = explode(' ', trim($payload));
 $claimr = new claimr();
 $slackBot = new \lygav\slackbot\SlackBot($slackBotUrl);
 $entityNumber = -1;
-
 /**
  * @param $claimr
  * @param $db

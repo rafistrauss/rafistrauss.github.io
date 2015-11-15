@@ -70,7 +70,7 @@ class claimr
         $valueArray = [":entityType" => $tableName, ":id" => $id];
 
         if(!$override) {
-            $queryString .= " and claimer = :claimer";
+            $queryString .= " and claimer = ':claimer'";
             $valueArray[":claimer"] = $claimer;
         }
         $query = $db->prepare($queryString);

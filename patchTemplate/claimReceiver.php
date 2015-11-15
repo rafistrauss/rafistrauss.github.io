@@ -16,7 +16,7 @@ $domain = $_POST['team_domain'];
 
 $slackBotUrl = "https://marsb.slack.com/services/hooks/slackbot?token=$marsbSlackToken&channel=%23patches";
 if($domain === "proseeder") {
-    $slackBotUrl = "https://proseeder.slack.com/services/hooks/slackbot?token=$proseederSlackToken&channel=%23autobuildtest";
+    $slackBotUrl = "https://proseeder.slack.com/services/hooks/slackbot?token=$proseederSlackToken&channel=%23patches-o_houlihan";
 }
 
 $date = date("Y m D H:i:s");

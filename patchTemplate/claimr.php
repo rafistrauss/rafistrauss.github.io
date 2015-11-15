@@ -78,6 +78,7 @@ class claimr
         if($res === false) {
             echo "There was some error";
             $this->logError( print_r(error_get_last(), true));
+            $this->logError(print_r($db->errorInfo(), true));
             return false;
         }
         else if($res === 0) {

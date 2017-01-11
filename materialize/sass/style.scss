@@ -1,2 +1,23 @@
 @import "materialize";
 
+.page-footer {
+  a {
+    margin: 0 .5em;
+    font-size: 150%;
+  }
+
+  .container {
+    padding-bottom: 20px;
+  }
+
+  .row {
+    margin-bottom: 0;
+  }
+
+}
+
+.authorImage {
+  max-height: 100px;
+  border-radius: 50%;
+
+}

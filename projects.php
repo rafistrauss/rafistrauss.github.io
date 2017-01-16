@@ -16,8 +16,7 @@ foreach ($items->items as $key => $project) {
     }
     ?>
     <div class="col s12 m4 center">
-        <img class="materialboxed z-depth-1" src="images/<?= $project->imageLink ?>"
-        data-caption="<?=$project->description ?>">
+        <img class="materialboxed z-depth-1" src="images/<?= $project->imageLink ?>" >
         <a href="<?=$project->projectLink ?>" target="_blank"><?=$project->project ?></a>
     </div>
     <?php

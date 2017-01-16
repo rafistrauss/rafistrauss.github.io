@@ -32,55 +32,9 @@
 </div>
 
 <div class="portfolio">
-    <div class="row">
-        <div class="col s12 m4">
-            <img src="images/Fitted-Threads.jpg">
-        </div>
-        <div class="col s12 m4">
-            <img src="images/SMS-Tool.jpg">
-        </div>
-        <div class="col s12 m4">
-            <img src="images/Distance-Calculator.jpg">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m4">
-            <img src="images/stylized-checkbox.jpg">
-        </div>
-        <div class="col s12 m4">
-            <img src="images/mrshmlw.png">
-        </div>
-        <div class="col s12 m4"></div>
-    </div>
+<?= include_once "projects.php" ?>
 </div>
 
-
-
-<div class="carousel section scrollspy">
-    <a class="carousel-item center" href="#">
-        <img src="images/Fitted-Threads.jpg">
-        <span class="">Fitted Threads</span>
-    </a>
-    <a class="carousel-item center" href="#">
-        <img src="images/SMS-Tool.jpg">
-        <span class="">SMS Tool</span>
-    </a>
-    <a class="carousel-item center" href="#">
-        <img src="images/Distance-Calculator.jpg">
-        <span class="">Distance Calculator</span>
-    </a>
-    <a class="carousel-item center" href="#">
-        <img src="images/stylized-checkbox.jpg">
-        <span class="">Stylized Checkbox</span>
-    </a>
-
-    <a class="carousel-item center" href="#">
-        <img src="images/mrshmlw.png">
-        <span class="">Mrshmlw Pillows</span>
-    </a>
-
-</div>
 
 <footer class="page-footer indigo lighten-1">
     <div class="container section scrollspy">

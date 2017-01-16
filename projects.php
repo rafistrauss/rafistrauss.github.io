@@ -11,12 +11,13 @@ foreach ($items->items as $key => $project) {
     if ($key % 3 === 0) {
         $open++;
         ?>
-        <div class="row">
+        <div class="row section">
         <?php
     }
     ?>
     <div class="col s12 m4 center">
-        <img class="materialboxed" src="images/<?= $project->imageLink ?>">
+        <img class="materialboxed z-depth-1" src="images/<?= $project->imageLink ?>"
+        data-caption="<?=$project->description ?>">
         <a href="<?=$project->projectLink ?>" target="_blank"><?=$project->project ?></a>
     </div>
     <?php

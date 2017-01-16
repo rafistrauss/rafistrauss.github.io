@@ -23,7 +23,7 @@
                     href="http://materializecss.com/">Materialize</a></h5>
 
             <div class="center">
-                <img class="authorImage" src="images/portrait.png" >
+                <img class="authorImage blue lighten-1" src="images/portrait.png" >
             </div>
 
         </div>
@@ -32,7 +32,7 @@
 </div>
 
 <div class="portfolio">
-<?= include_once "projects.php" ?>
+<?php include_once "projects.php" ?>
 </div>
 
 

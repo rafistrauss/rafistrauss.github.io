@@ -1,0 +1,42 @@
+@import "materialize";
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+.page-footer {
+  a {
+    margin: 0 .5em;
+    font-size: 150%;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+
+  .container {
+    padding-bottom: 20px;
+  }
+
+  .row {
+    margin-bottom: 0;
+  }
+
+}
+
+.authorImage {
+  max-height: 100px;
+  border-radius: 50%;
+
+}
+
+.portfolio {
+  .materialboxed {
+    width: 100%;
+  }
+}
+
+#materialbox-overlay {
+  z-index: 10;
+}

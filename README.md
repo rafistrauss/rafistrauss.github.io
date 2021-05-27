@@ -1,12 +1,5 @@
-[rafistrauss.github.io](http://rafistrauss.github.io/)
-=====================
+# [rafistrauss.github.io](http://rafistrauss.github.io/)
 
-Homepage for Github pages, built with [Polymer](https://www.polymer-project.org/), an awesome new approach to web development.
-
-##About this page
-There were 2 reasons I chose to build my portfolio site using Polymer
-
-1. Polymer is awesome. Inspired by Material Design, it looks great and is a robust framework for building frontend apps.
-2. It would give me more experience with developing clean, interesting interfaces and utilizing frameworks.
-
-I'd definitely recommend taking a gander at it. 
+[![built with sveltekit](https://img.shields.io/badge/built%20with-sveltekit-ff3e00?logo=svelte&style=flat-square)](<(https://kit.svelte.dev/)>)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square&logo=prettier)](https://github.com/prettier/prettier)
+[![linter: eslint](https://img.shields.io/badge/linter-eslint-4B32C3.svg?style=flat-square&logo=eslint)](https://eslint.org/)

@@ -1,8 +1,6 @@
 <script context="module">
 	export const prerender = true;
 	import { items } from '$lib/projectData.js';
-
-	let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 </script>
 
 <script>

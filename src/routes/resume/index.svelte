@@ -1,9 +1,9 @@
 <script>
 	// your script goes here
-	import { resumeData } from "$lib/Resume/data.js";
+	import { resumeData } from '$lib/Resume/data.js';
 	const dateFormat = {
-		month: "short",
-		year: "numeric"
+		month: 'short',
+		year: 'numeric'
 	};
 </script>
 
@@ -34,9 +34,9 @@
 							<div>
 								<h2>{item.title}</h2>
 								<p class="subDetails">
-									{new Date(item.startDate).toLocaleString("default", dateFormat)} - {item.current
-										? "Present"
-										: new Date(item.endDate).toLocaleString("default", dateFormat)}
+									{new Date(item.startDate).toLocaleString('default', dateFormat)} - {item.current
+										? 'Present'
+										: new Date(item.endDate).toLocaleString('default', dateFormat)}
 								</p>
 							</div>
 							<h3>{item.companyName}</h3>
@@ -123,8 +123,8 @@
 	/* We need to minimize the use of code, so we will be using roots...this is in the works */
 	:root {
 		--highlight: #a29400;
-		--header-font: "Gudea", Helvetica, Arial, sans-serif;
-		--content-font: "Lato", Helvetica, Arial, sans-serif;
+		--header-font: 'Gudea', Helvetica, Arial, sans-serif;
+		--content-font: 'Lato', Helvetica, Arial, sans-serif;
 	}
 
 	.clear {
@@ -167,8 +167,8 @@
 		max-width: 54rem;
 		background: #fff;
 		margin: 30px auto;
-		font-family: "Lato", Helvetica, Arial, sans-serif;
-		font-feature-settings: "calt", "liga", "hist", "onum", "pnum";
+		font-family: 'Lato', Helvetica, Arial, sans-serif;
+		font-feature-settings: 'calt', 'liga', 'hist', 'onum', 'pnum';
 		font-size: 1rem;
 		color: #222;
 	}
@@ -187,7 +187,7 @@
 
 	#name h1 {
 		font-size: 2.5em;
-		font-family: "Gudea", Helvetica, arial, sans-serif;
+		font-family: 'Gudea', Helvetica, arial, sans-serif;
 	}
 
 	#mainArea {
@@ -268,7 +268,7 @@
 	}
 
 	.sectionTitle h1 {
-		font-family: "Gudea", helvetica, arial, sans-serif;
+		font-family: 'Gudea', helvetica, arial, sans-serif;
 		font-size: 0.89em;
 		color: #028568;
 		text-transform: uppercase;
@@ -276,7 +276,7 @@
 	}
 
 	.sectionContent h2 {
-		font-family: "Gudea", helvetica, arial, sans-serif;
+		font-family: 'Gudea', helvetica, arial, sans-serif;
 		font-size: 1.5em;
 	}
 

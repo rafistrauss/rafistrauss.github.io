@@ -1,5 +1,5 @@
 <script>
-	import logo from "./svelte-logo.svg";
+	import logo from './svelte-logo.svg';
 </script>
 
 <footer>

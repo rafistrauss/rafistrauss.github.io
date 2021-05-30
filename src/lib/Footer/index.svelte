@@ -14,6 +14,7 @@
 		margin: auto;
 		height: 30px;
 		font-size: larger;
+		text-align: center;
 	}
 
 	a {

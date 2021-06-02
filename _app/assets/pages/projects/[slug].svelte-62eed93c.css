@@ -1,0 +1,1 @@
+.details.svelte-16ytleg{display:grid;grid-auto-rows:1fr;grid-template-areas:'image' 'text'}@media all and (min-width:768px){.details.svelte-16ytleg{grid-auto-columns:1fr;grid-template-areas:'text image';gap:1em}}.project-link.svelte-16ytleg{text-align:center}.project-image{max-width:100%;grid-area:image}.project-description.svelte-16ytleg{grid-area:text}

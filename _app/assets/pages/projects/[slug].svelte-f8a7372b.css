@@ -1,1 +1,0 @@
-.details.svelte-j87kdu{display:grid;grid-auto-rows:1fr;grid-template-areas:'image' 'text'}@media all and (min-width:768px){.details.svelte-j87kdu{grid-auto-columns:1fr;grid-template-areas:'text image';gap:1em}}.project-link.svelte-j87kdu{text-align:center}.project-image.svelte-j87kdu{max-width:100%;grid-area:image}.project-description.svelte-j87kdu{grid-area:text}

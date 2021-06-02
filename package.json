@@ -4,7 +4,8 @@
 	"scripts": {
 		"dev": "svelte-kit dev -p 3003",
 		"build": "svelte-kit build",
-		"preview": "svelte-kit preview",
+		"prebuild": "node buildSitemap.js",
+		"preview": "svelte-kit preview -p 3003",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"formatAndLint": "prettier --write --plugin-search-dir=. . && eslint --fix --ignore-path .gitignore .",

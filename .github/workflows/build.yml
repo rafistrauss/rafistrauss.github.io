@@ -13,7 +13,10 @@ jobs:
         with:
           node-version: 15.14.0
       - run: npm ci
-      - run: npm run build
+      - name: Build Sitemap
+        run: npm run prebuild
+      - name: Build site
+        run: npm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

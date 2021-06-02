@@ -9,7 +9,8 @@
 <a
 	href={link}
 	class="iconLink"
-	target={newTab ? '_blank' : ''}
+	target={newTab ? '_blank' : null}
+	rel={newTab ? 'noreferrer' : null}
 	aria-label={label}
 	style="--hover-color: {color}"
 >

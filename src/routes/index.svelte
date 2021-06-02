@@ -5,10 +5,25 @@
 </script>
 
 <script>
+	const pageUrl = 'https://rafistrauss.com';
+	const pageDescription =
+		'The homepage for Rafi Strauss, and portfolio of projects. Built with sveltekit. Blazing fast';
+	const pageTitle = 'Rafi Strauss Homepage';
 </script>
 
 <svelte:head>
 	<title>Home</title>
+	<link rel="canonical" href={pageUrl} />
+	<meta name="description" content={pageDescription} />
+	<meta name="author" content="Rafi Strauss" />
+	<meta property="og:url" content={pageUrl} />
+	<meta property="og:title" content={pageTitle} />
+	<!-- <meta property="og:image" content={ogImageUrl} />
+	<meta property="og:image:secure_url" content={ogImageUrl} />
+	<meta property="og:image:type" content={'image/jpg'} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="627" /> -->
+	<meta property="og:type" content="website" />
 </svelte:head>
 
 <section style="display: grid; ">

@@ -3,7 +3,7 @@
 </script>
 
 <footer>
-	Built with <a href="https://kit.svelte.dev/" target="_blank"
+	Built with <a href="https://kit.svelte.dev/" target="_blank" rel="noreferrer"
 		><img src={logo} alt="Sveltekit" />
 		Sveltekit
 	</a>

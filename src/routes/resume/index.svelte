@@ -1,6 +1,8 @@
 <script>
-	// your script goes here
-	import { resumeData } from '$lib/Resume/data.js';
+	/** @type {Resume} */
+	import tempData from '$lib/Resume/resume.json';
+	import gemIcon from '$lib/Resume/gem.svg';
+	const resumeInfo = tempData;
 	const dateFormat = {
 		month: 'short',
 		year: 'numeric'
@@ -10,14 +12,14 @@
 <div class="cv instaFade wrap">
 	<div class="mainDetails">
 		<div id="name">
-			<h1 class="quickFade delayTwo">Rafi Strauss</h1>
-			<h4 class="quickFade delayThree">Software Engineer</h4>
-			<h4 class="quickFade delayThree">New York</h4>
+			<h1 class="quickFade delayTwo">{resumeInfo.basics.name}</h1>
+			<h4 class="quickFade delayThree">{resumeInfo.basics.label}</h4>
+			<h4 class="quickFade delayThree">{resumeInfo.basics.location.city}</h4>
 		</div>
 
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li><a href="mailto:rafi@rafistrauss.com">rafi@rafistrauss.com</a></li>
+				<li><a href="mailto:{resumeInfo.basics.email}">rafi@rafistrauss.com</a></li>
 			</ul>
 		</div>
 		<div class="clear" />
@@ -29,27 +31,57 @@
 
 			<div class="sectionContent js-experience-section">
 				<article class="experience">
-					{#each resumeData as item}
+					{#each resumeInfo.work as item}
 						<div class="experience__item">
 							<div>
-								<h2>{item.title}</h2>
+								<h2>{item.position}</h2>
 								<p class="subDetails">
-									{new Date(item.startDate).toLocaleString('default', dateFormat)} - {item.current
-										? 'Present'
-										: new Date(item.endDate).toLocaleString('default', dateFormat)}
+									{new Date(item.startDate).toLocaleString('default', dateFormat)} - {item.endDate
+										? new Date(item.endDate).toLocaleString('default', dateFormat)
+										: 'Present'}
 								</p>
 							</div>
-							<h3>{item.companyName}</h3>
+							<h3 class="companyName">{item.name}</h3>
 							<ul>
-								{#each item.tasks as task}
-									<li>{@html task.description}</li>
+								{#each item.highlights as task}
+									<li>{@html task}</li>
 								{/each}
 							</ul>
 						</div>
 					{/each}
 				</article>
 			</div>
-
+			<div class="clear" />
+		</section>
+		<section>
+			<div class="sectionTitle"><h1>Awards</h1></div>
+			<div class="sectionContent">
+				<article class="awards">
+					{#each resumeInfo.awards as award}
+						<div class="experience__item">
+							<div>
+								<h2>
+									<img
+										src={gemIcon}
+										style="height: 0.85em; margin-right: 4px;"
+										alt=""
+									/>{award.title}
+								</h2>
+								<p class="subDetails">
+									{new Date(award.date).toLocaleString('default', {
+										month: 'long',
+										year: 'numeric'
+									})}
+								</p>
+							</div>
+							<h3 class="companyName">{award.awarder}</h3>
+							<p>
+								{award.summary}
+							</p>
+						</div>
+					{/each}
+				</article>
+			</div>
 			<div class="clear" />
 		</section>
 
@@ -76,8 +108,8 @@
 
 			<div class="sectionContent">
 				<article>
-					<h2>BA, Computer Science</h2>
-					<p class="subDetails">Yeshiva University</p>
+					<h2>{resumeInfo.education[0].studyType}, {resumeInfo.education[0].area}</h2>
+					<p class="subDetails">{resumeInfo.education[0].institution}</p>
 				</article>
 			</div>
 			<div class="clear" />
@@ -131,6 +163,10 @@
 		clear: both;
 	}
 
+	.companyName {
+		margin-bottom: 0.5em;
+	}
+
 	.experience__item {
 		margin-top: 1em;
 	}
@@ -156,7 +192,6 @@
 		line-height: 1.4em;
 		margin-bottom: 20px;
 		color: #444;
-		transition: all 1s linear;
 	}
 
 	a {
@@ -240,6 +275,7 @@
 	section {
 		border-top: 1px solid #dedede;
 		padding: 10px 0 0;
+		page-break-inside: avoid;
 	}
 
 	@media all and (min-width: 768px) {
@@ -281,8 +317,9 @@
 	}
 
 	.subDetails {
-		font-size: 80%;
+		font-size: 85%;
 		margin-bottom: 3px;
+		align-self: flex-end;
 	}
 
 	.keySkills {

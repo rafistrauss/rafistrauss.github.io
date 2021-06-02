@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 
 	import IconLink from '$lib/IconLink/index.svelte';
-	import { document } from '$lib/Resume/document';
+	// import { document } from '$lib/Resume/document';
 	import github from 'simple-icons/icons/github.js';
 	import stackoverflow from 'simple-icons/icons/stackoverflow.js';
 	import linkedin from 'simple-icons/icons/linkedin.js';
@@ -36,17 +36,28 @@
 			svg={linkedin.svg}
 			color="#{linkedin.hex}"
 		/>
-		<IconLink link="/resume" svg={document.svg} color="#34d058" />
+		<!-- <IconLink link="/resume" svg={document.svg} color="#34d058" /> -->
 		<IconLink link="mailto:rafi@rafistrauss.com" svg={gmail.svg} color="#{gmail.hex}" />
 	</div>
 </header>
 
 <style>
 	header {
-		display: flex;
-		justify-content: space-between;
 		background-color: rgba(255, 255, 255, 0.7);
-		padding: 1em;
+		display: grid;
+		place-content: center;
+		width: 100%;
+		padding: 1em 0;
+		gap: 0.5em;
+		box-sizing: border-box;
+	}
+
+	@media screen and (min-width: 758px) {
+		header {
+			display: flex;
+			justify-content: space-between;
+			padding: 1em;
+		}
 	}
 
 	.contactLinks {

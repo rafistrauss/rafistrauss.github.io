@@ -15,6 +15,7 @@
 		height: 30px;
 		font-size: larger;
 		text-align: center;
+		padding: 30px 0;
 	}
 
 	a {

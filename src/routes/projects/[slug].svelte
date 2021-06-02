@@ -1,5 +1,6 @@
 <script context="module">
 	import { items } from '$lib/projectData.js';
+	import Picture from '$lib/Picture/index.svelte';
 	import { browser, dev } from '$app/env';
 
 	// we don't need any JS on this page, though we'll load
@@ -55,9 +56,7 @@
 {/if}
 
 <section class="details">
-	<picture>
-		<img class="project-image" src="/projectImages/{projectData.imageLink}" alt="" />
-	</picture>
+	<Picture imageSource={`/projectImages/${projectData.imageLink}`} className="project-image" />
 
 	<p class="project-description">
 		{@html projectData.description}
@@ -85,7 +84,7 @@
 		text-align: center;
 	}
 
-	.project-image {
+	:global(.project-image) {
 		max-width: 100%;
 		grid-area: image;
 	}

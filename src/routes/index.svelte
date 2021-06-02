@@ -1,6 +1,7 @@
 <script context="module">
 	export const prerender = true;
 	import { items } from '$lib/projectData.js';
+	import Picture from '$lib/Picture/index.svelte';
 </script>
 
 <script>
@@ -16,7 +17,7 @@
 			<div class="item__top-border" style="background-color: {item.color}; color: {item.textColor}">
 				{item.name}
 			</div>
-			<img class="item__image-link" src="/projectImages/{item.imageLink}" alt="" />
+			<Picture className="item__image-link" imageSource="/projectImages/{item.imageLink}" alt="" />
 			<!-- <span >{item.name}</span> -->
 		</a>
 	{/each}
@@ -75,7 +76,7 @@
 		line-height: 2;
 	}
 
-	.item__image-link {
+	:global(.item__image-link) {
 		max-width: 100%;
 	}
 

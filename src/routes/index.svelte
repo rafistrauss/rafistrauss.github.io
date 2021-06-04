@@ -21,7 +21,7 @@
 		sessionStorage.setItem(pageAlreadyVisitedKey, pageAlreadyVisitedValue);
 		window.addEventListener('beforeunload', () => {
 			sessionStorage.removeItem(pageAlreadyVisitedKey);
-		})
+		});
 	});
 </script>
 

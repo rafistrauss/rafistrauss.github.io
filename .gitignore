@@ -5,3 +5,4 @@ node_modules
 /functions
 .vscode/settings.json
 static/sitemap.txt
+html-resume/

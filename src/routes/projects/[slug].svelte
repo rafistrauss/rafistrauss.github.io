@@ -49,9 +49,18 @@
 
 <h1>{projectData.name}</h1>
 
-{#if projectData.projectLink}
+{#if projectData.projectLink || projectData.repoLink}
 	<h2 class="project-link">
-		<a target="_blank" href={projectData.projectLink}>View this project live</a>
+		{#if projectData.projectLink}
+			<a class="project-link__link" target="_blank" rel="noreferrer" href={projectData.projectLink}
+				>View this project live</a
+			>
+		{/if}
+		{#if projectData.repoLink}
+			<a class="project-link__link" target="_blank" rel="noreferrer" href={projectData.repoLink}
+				>View the code for this project</a
+			>
+		{/if}
 	</h2>
 {/if}
 
@@ -82,6 +91,10 @@
 
 	.project-link {
 		text-align: center;
+	}
+
+	.project-link__link {
+		display: block;
 	}
 
 	:global(.project-image) {

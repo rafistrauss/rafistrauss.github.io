@@ -5,10 +5,24 @@
 </script>
 
 <script>
+	import { onMount } from 'svelte';
+
+	const pageAlreadyVisitedKey = 'pageVisited';
+	const pageAlreadyVisitedValue = 'true';
+
+	let pageVisited = false;
+
 	const pageUrl = 'https://rafistrauss.com';
 	const pageDescription =
 		'The homepage for Rafi Strauss, and portfolio of projects. Built with sveltekit. Blazing fast';
 	const pageTitle = 'Rafi Strauss Homepage';
+	onMount(() => {
+		pageVisited = sessionStorage.getItem(pageAlreadyVisitedKey) === pageAlreadyVisitedValue;
+		sessionStorage.setItem(pageAlreadyVisitedKey, pageAlreadyVisitedValue);
+		window.addEventListener('beforeunload', () => {
+			sessionStorage.removeItem(pageAlreadyVisitedKey);
+		})
+	});
 </script>
 
 <svelte:head>
@@ -26,7 +40,7 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<section style="display: grid; ">
+<section class={pageVisited ? 'hideAnimation' : ''} style="display: grid; ">
 	{#each items as item, idx}
 		<a class="item" style="animation-delay: {idx * 0.2}s;" href="/projects/{item.slug}">
 			<div class="item__top-border" style="background-color: {item.color}; color: {item.textColor}">
@@ -95,6 +109,10 @@
 		max-width: 100%;
 	}
 
+	.hideAnimation .item {
+		animation: none;
+		opacity: 1;
+	}
 	@media (prefers-reduced-motion) {
 		.item {
 			animation: none;

@@ -5,7 +5,7 @@ const basePath = 'https://rafistrauss.com';
 
 const mainUrls = ['/', '/resume'];
 
-const projectUrls = items.map((item) => `/${item.slug}`);
+const projectUrls = items.map((item) => `/projects/${item.slug}`);
 
 const allUrls = [...mainUrls, ...projectUrls];
 

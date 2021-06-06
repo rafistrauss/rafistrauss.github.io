@@ -14,8 +14,8 @@
 
 	const pageUrl = 'https://rafistrauss.com';
 	const pageDescription =
-		'The homepage for Rafi Strauss, and portfolio of projects. Built with sveltekit. Blazing fast';
-	const pageTitle = 'Rafi Strauss Homepage';
+		'The homepage for Rafi Strauss:  portfolio of his projects, resume, general info. Built with sveltekit. Blazing fast - straight 100s on core web vitals';
+	const pageTitle = 'Rafi Strauss Portfolio: Homepage';
 	onMount(() => {
 		pageVisited = sessionStorage.getItem(pageAlreadyVisitedKey) === pageAlreadyVisitedValue;
 		sessionStorage.setItem(pageAlreadyVisitedKey, pageAlreadyVisitedValue);
@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>{pageTitle}</title>
 	<link rel="canonical" href={pageUrl} />
 	<meta name="description" content={pageDescription} />
 	<meta name="author" content="Rafi Strauss" />
@@ -40,14 +40,20 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
+<h2 class="projectsTitle">Projects</h2>
+
 <section class={pageVisited ? 'hideAnimation' : ''} style="display: grid; ">
 	{#each items as item, idx}
-		<a class="item" style="animation-delay: {idx * 0.2}s;" href="/projects/{item.slug}">
+		<a
+			class="item"
+			title={`Project ${item.name}`}
+			style="animation-delay: {idx * 0.2}s;"
+			href="/projects/{item.slug}"
+		>
 			<div class="item__top-border" style="background-color: {item.color}; color: {item.textColor}">
 				{item.name}
 			</div>
 			<Picture className="item__image-link" imageSource="/projectImages/{item.imageLink}" alt="" />
-			<!-- <span >{item.name}</span> -->
 		</a>
 	{/each}
 </section>
@@ -60,6 +66,12 @@
 		align-items: center;
 		flex: 1;
 	} */
+
+	.projectsTitle {
+		text-align: center;
+		font-size: 2em;
+	}
+
 	section {
 		display: grid;
 		gap: 1em;

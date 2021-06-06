@@ -1,6 +1,7 @@
 <script>
 	export let svg;
 	export let link;
+	export let title = null;
 	export let newTab = true;
 	export let label = 'none';
 	export let color = 'orange';
@@ -9,6 +10,7 @@
 <a
 	href={link}
 	class="iconLink"
+	{title}
 	target={newTab ? '_blank' : null}
 	rel={newTab ? 'noreferrer' : null}
 	aria-label={label}

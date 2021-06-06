@@ -12,9 +12,11 @@
 <header>
 	<nav>
 		<ul>
-			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
+			<li class:active={$page.path === '/'}>
+				<a sveltekit:prefetch title="Home" href="/">Home</a>
+			</li>
 			<li class:active={$page.path === '/resume'}>
-				<a sveltekit:prefetch href="/resume">Resume</a>
+				<a sveltekit:prefetch title="Resume" href="/resume">Resume</a>
 			</li>
 		</ul>
 	</nav>
@@ -23,21 +25,29 @@
 		<IconLink
 			link="https://github.com/rafistrauss"
 			svg={github.svg}
+			title="Github Link"
 			label={github.title}
 			color="#388bfd"
 		/>
 		<IconLink
 			link="https://stackoverflow.com/users/1851509/general-twyckenham"
+			title="StackOverflow Link"
 			svg={stackoverflow.svg}
 			color="#{stackoverflow.hex}"
 		/>
 		<IconLink
+			title="LinkedIn Link"
 			link="https://www.linkedin.com/in/rafi-strauss-84043143/"
 			svg={linkedin.svg}
 			color="#{linkedin.hex}"
 		/>
 		<!-- <IconLink link="/resume" svg={document.svg} color="#34d058" /> -->
-		<IconLink link="mailto:rafi@rafistrauss.com" svg={gmail.svg} color="#{gmail.hex}" />
+		<IconLink
+			link="mailto:rafi@rafistrauss.com"
+			title="Email link"
+			svg={gmail.svg}
+			color="#{gmail.hex}"
+		/>
 	</div>
 </header>
 

@@ -23,7 +23,8 @@
 	.iconLink {
 		width: 32px;
 		transition: fill 0.3s ease;
-		display: inline-flex;
+		display: inline-grid;
+		align-content: center;
 	}
 
 	.iconLink:hover {

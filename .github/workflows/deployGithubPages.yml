@@ -1,7 +1,5 @@
-on:
-  release:
-    types:
-      - released
+# Build & deploy site to Github Pages
+on: workflow_dispatch
 
 jobs:
   Deploy-Github-Pages:
@@ -22,11 +20,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-      - name: Deploy to rafistrauss.com
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          script: cd rafistrauss.github.io/ && git pull

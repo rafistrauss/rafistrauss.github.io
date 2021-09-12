@@ -1,4 +1,5 @@
 # Build & deploy site to Github Pages & rafistrauss.com
+name: Deploy GH Pages & rafistrauss.com
 on:
   release:
     types:

@@ -1,4 +1,5 @@
 # Build & deploy site to Github Pages
+name: Deploy GH Pages only
 on: workflow_dispatch
 
 jobs:

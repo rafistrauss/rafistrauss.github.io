@@ -1,6 +1,10 @@
 # Build & deploy site to Github Pages
 name: Deploy GH Pages only
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - 'feature/blog'
+  workflow_dispatch:
 
 jobs:
   Deploy-Github-Pages:

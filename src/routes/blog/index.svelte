@@ -32,7 +32,7 @@
 <ul class="list-none">
 	{#each posts as { title, tags, outline, slug, published_at }}
 		<li class="list-none">
-			<a class="text-blue-500 space-y-3" rel="prefetch" href="blog/{slug}">
+			<a class="text-blue-500 space-y-3" rel="prefetch" href="/blog/{slug}">
 				<h2>
 					{title}
 				</h2>

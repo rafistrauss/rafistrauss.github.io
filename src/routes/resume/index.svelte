@@ -195,7 +195,7 @@
 	}
 
 	a {
-		color: #028568;
+		color: var(--accent-color);
 	}
 
 	.cv {
@@ -210,7 +210,7 @@
 
 	.mainDetails {
 		padding: 25px 35px;
-		border-bottom: 2px solid #028568;
+		border-bottom: 2px solid var(--accent-color);
 		background: #f3f3f3;
 	}
 
@@ -306,7 +306,7 @@
 	.sectionTitle h1 {
 		font-family: 'Gudea', helvetica, arial, sans-serif;
 		font-size: 0.89em;
-		color: #028568;
+		color: var(--accent-color);
 		text-transform: uppercase;
 		letter-spacing: 1px;
 	}

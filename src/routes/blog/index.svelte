@@ -81,7 +81,7 @@
 	}
 
 	a {
-		background-color: #fffe7e78;
+		background-color: var(--tertiary-color);
 		padding: 0.3em 0.5em;
 		border-radius: 15px;
 		transform: translate(2px, 2px);

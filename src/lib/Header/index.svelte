@@ -18,6 +18,9 @@
 			<li class:active={$page.path.startsWith('/resume')}>
 				<a sveltekit:prefetch title="Resume" href="/resume/">Resume</a>
 			</li>
+			<li class:active={$page.path.startsWith('/blog')}>
+				<a sveltekit:prefetch title="Blog" href="/blog/">Blog</a>
+			</li>
 		</ul>
 	</nav>
 

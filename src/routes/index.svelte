@@ -2,6 +2,7 @@
 	export const prerender = true;
 	import { items } from '$lib/projectData.js';
 	import Picture from '$lib/Picture/index.svelte';
+	import Seo from '$lib/Seo/index.svelte';
 </script>
 
 <script>
@@ -26,18 +27,13 @@
 </script>
 
 <svelte:head>
-	<title>{pageTitle}</title>
-	<link rel="canonical" href={pageUrl} />
-	<meta name="description" content={pageDescription} />
-	<meta name="author" content="Rafi Strauss" />
-	<meta property="og:url" content={pageUrl} />
-	<meta property="og:title" content={pageTitle} />
+	<Seo {pageTitle} {pageDescription} {pageUrl} />
+
 	<!-- <meta property="og:image" content={ogImageUrl} />
 	<meta property="og:image:secure_url" content={ogImageUrl} />
 	<meta property="og:image:type" content={'image/jpg'} />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="627" /> -->
-	<meta property="og:type" content="website" />
 </svelte:head>
 
 <h2 class="projectsTitle">Projects</h2>

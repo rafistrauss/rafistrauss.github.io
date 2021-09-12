@@ -22,11 +22,16 @@ const lastModifiedDate = new Date().toISOString().split('T')[0];
 
 const basePath = 'https://rafistrauss.com';
 
-const mainUrls = ['/', '/resume/'];
+const mainUrls = ['/', '/resume/', '/blog/'];
 
 const projectUrls = items.map((item) => `/projects/${item.slug}`);
 
-const allUrls = [...mainUrls, ...projectUrls];
+const blogUrls = fs
+	.readdirSync('./src/routes/blog/')
+	.filter((fileName) => fileName.endsWith('.svx'))
+	.map((fileName) => `/blog/${fileName.replace('.svx', '')}`);
+
+const allUrls = [...mainUrls, ...projectUrls, ...blogUrls];
 
 const sitemapUrls = allUrls
 	.map((url) => `${basePath}${url}`)

@@ -11,6 +11,17 @@
 		font-size: 1.1em;
 	}
 
+	p code,
+	ol code {
+		color: var(--accent-color);
+		background-color: var(--tertiary-color);
+		border-radius: 5px;
+		padding: 2px 3px 1px;
+		border: 1px solid #cacaca;
+		line-height: 1.5;
+		font-size: 12px;
+	}
+
 	p:first-of-type::first-letter {
 		color: var(--accent-color);
 		font-size: 2em;

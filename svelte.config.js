@@ -4,7 +4,7 @@ import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 
-const config = {
+export default {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	preprocess: [mdsvex(mdsvexConfig)],
 	kit: {
@@ -16,5 +16,3 @@ const config = {
 		})
 	}
 };
-
-export default config;

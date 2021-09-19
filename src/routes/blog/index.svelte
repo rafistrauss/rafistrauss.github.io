@@ -2,12 +2,12 @@
 	/* eslint-disable */
 	import Tag from '$lib/Tag/index.svelte';
 
-	const posts = import.meta.glob('./*.svx');
+	const postFiles = import.meta.glob('./*.svx');
 
 	let body = [];
 
-	for (const path in posts) {
-		body.push(posts[path]().then(({ metadata }) => metadata));
+	for (const path in postFiles) {
+		body.push(postFiles[path]().then(({ metadata }) => metadata));
 	}
 	/**
 	 * @type {import('@sveltejs/kit').Load}

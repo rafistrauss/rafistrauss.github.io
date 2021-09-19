@@ -5,45 +5,15 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<title>A Blog By Any Other Name</title>
+		<title>Cravath Bicentennial</title>
 
 		
 
-		<link rel="modulepreload" href="/_app/start-02fc11bc.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-2275b982.js">
-		<link rel="modulepreload" href="/_app/chunks/preload-helper-ec9aa979.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-452c8343.js">
-		<link rel="modulepreload" href="/_app/pages/blog/index.svelte-99fcc7ce.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-d2e95240.css">
-		<link rel="stylesheet" href="/_app/assets/pages/blog/index.svelte-376c7654.css">
+		<link rel="stylesheet" href="/_app/assets/pages/projects/[slug].svelte-dbb901c3.css">
 
-		<script type="module">
-			import { start } from "/_app/start-02fc11bc.js";
-			start({
-				target: document.body,
-				paths: {"base":"","assets":""},
-				session: {},
-				host: location.host,
-				route: true,
-				spa: false,
-				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/_app/pages/__layout.svelte-452c8343.js"),
-						import("/_app/pages/blog/index.svelte-99fcc7ce.js")
-					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "/blog",
-						query: new URLSearchParams(""),
-						params: {}
-					}
-				}
-			});
-		</script>
+		
 	</head>
 	<body>
 		<div id="svelte">
@@ -51,7 +21,7 @@
 
 <header class="svelte-3hohdq"><nav class="svelte-3hohdq"><ul class="svelte-3hohdq"><li class="svelte-3hohdq"><a sveltekit:prefetch title="Home" href="/" class="svelte-3hohdq">Home</a></li>
 			<li class="svelte-3hohdq"><a sveltekit:prefetch title="Resume" href="/resume/" class="svelte-3hohdq">Resume</a></li>
-			<li class="svelte-3hohdq active"><a sveltekit:prefetch title="Blog" href="/blog/" class="svelte-3hohdq">Blog</a></li></ul></nav>
+			<li class="svelte-3hohdq"><a sveltekit:prefetch title="Blog" href="/blog/" class="svelte-3hohdq">Blog</a></li></ul></nav>
 
 	<div class="contactLinks svelte-3hohdq"><a href="https://github.com/rafistrauss" class="iconLink svelte-1cmf7za" title="Github Link" target="_blank" rel="noreferrer" aria-label="GitHub" style="--hover-color: #388bfd"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
 </a>
@@ -65,20 +35,18 @@
 
 <main class="svelte-1l5lemn">
 
-<h1>A Blog By Any Other Name</h1>
 
-<ul class="list-none svelte-mo237j"><li class="list-none svelte-mo237j"><a class="text-blue-500 space-y-3 svelte-mo237j" rel="prefetch" href="/blog/ordered_z_index_maps"><h2 class="svelte-mo237j">OZMap! The ultimate z-index solution</h2>
 
-				<p class="text-white text-base">How ordered maps solve the final issue with z-indexes: 3rd party ones</p>
+<h1>Cravath Bicentennial</h1>
 
-				<p class="text-sm font-normal text-gray-500">Tags:
-					<span class="tags svelte-mo237j"><span class="svelte-d1944t">SASS
-</span>
-					</span></p>
-				<p class="date svelte-mo237j">September 13, 2021
-				</p></a>
-		</li>
-</ul></main>
+<h2 class="project-link svelte-1bjxyxa"><a class="project-link__link svelte-1bjxyxa" target="_blank" rel="noreferrer" href="https://200.cravath.com/">View this project live</a>
+		</h2>
+
+<section class="details svelte-1bjxyxa"><picture><source srcset="/projectImages/Cravath_200.webp" type="image/webp">
+	<img class="project-image" src="/projectImages/Cravath_200.jpg" alt=""></picture>
+
+	<p class="project-description svelte-1bjxyxa">One of my favorite projects while working at RubensteinTech was the website for Cravath's Bicentennial celebration. The unique designs created some very interesting challenges and requirements. <br /> Chief amongst these may have been the "gifs" that are sprinkled throughout the site; judicious use of the native video element allowed for much smaller files for the same quality, providing a seamless experience.</p>
+</section></main>
 
 <footer class="svelte-1gn6u0q">Built with <a href="https://kit.svelte.dev/" title="Sveltekit" target="_blank" rel="noreferrer" class="svelte-1gn6u0q"><img src="/_app/assets/svelte-logo-87df40b8.svg" alt="Sveltekit" class="svelte-1gn6u0q">
 		Sveltekit

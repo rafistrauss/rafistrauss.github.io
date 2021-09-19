@@ -27,6 +27,10 @@
 	export let posts;
 </script>
 
+<svelte:head>
+	<title>A Blog By Any Other Name</title>
+</svelte:head>
+
 <h1>A Blog By Any Other Name</h1>
 
 <ul class="list-none">

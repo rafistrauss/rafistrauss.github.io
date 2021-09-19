@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 
 	import IconLink from '$lib/IconLink/index.svelte';
-	// import { document } from '$lib/Resume/document';
 	import github from 'simple-icons/icons/github.js';
 	import stackoverflow from 'simple-icons/icons/stackoverflow.js';
 	import linkedin from 'simple-icons/icons/linkedin.js';
@@ -44,7 +43,6 @@
 			svg={linkedin.svg}
 			color="#{linkedin.hex}"
 		/>
-		<!-- <IconLink link="/resume" svg={document.svg} color="#34d058" /> -->
 		<IconLink
 			link="mailto:rafi@rafistrauss.com"
 			title="Email link"

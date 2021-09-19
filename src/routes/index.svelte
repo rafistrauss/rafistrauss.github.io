@@ -2,7 +2,6 @@
 	export const prerender = true;
 	import { items } from '$lib/projectData.js';
 	import Picture from '$lib/Picture/index.svelte';
-	import Seo from '$lib/Seo/index.svelte';
 </script>
 
 <script>
@@ -17,6 +16,7 @@
 	const pageDescription =
 		'The homepage for Rafi Strauss:  portfolio of his projects, resume, general info. Built with sveltekit. Blazing fast - straight 100s on core web vitals';
 	const pageTitle = 'Rafi Strauss Portfolio: Homepage';
+	const pageType = 'website';
 	onMount(() => {
 		pageVisited = sessionStorage.getItem(pageAlreadyVisitedKey) === pageAlreadyVisitedValue;
 		sessionStorage.setItem(pageAlreadyVisitedKey, pageAlreadyVisitedValue);
@@ -27,7 +27,14 @@
 </script>
 
 <svelte:head>
-	<Seo {pageTitle} {pageDescription} {pageUrl} />
+	<!-- <Seo {pageTitle} {pageDescription} {pageUrl} /> -->
+	<title>{pageTitle}</title>
+	<link rel="canonical" href={pageUrl} />
+	<meta name="description" content={pageDescription} />
+	<meta name="author" content="Rafi Strauss" />
+	<meta property="og:url" content={pageUrl} />
+	<meta property="og:title" content={pageTitle} />
+	<meta property="og:type" content={pageType} />
 
 	<!-- <meta property="og:image" content={ogImageUrl} />
 	<meta property="og:image:secure_url" content={ogImageUrl} />

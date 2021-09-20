@@ -45,6 +45,10 @@
 	<meta property="og:type" content={pageType} />
 	<meta property="og:image" content={image}>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
 	{@html '<script type="application/ld+json">'+ JSON.stringify(jsonLd) + '</script>'}
 </svelte:head>
 

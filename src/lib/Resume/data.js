@@ -1,4 +1,4 @@
-export const skills = [
+export const rafiSkills = [
 	'HTML5/CSS3/SASS',
 	'Javascript',
 	'git',

@@ -1,8 +1,7 @@
 <script>
 	import Resume from '$lib/Resume/index.svelte';
 	/** @type {Resume} */
-	import tempData from '$lib/Resume/resume.json';
-	import {rafiSkills} from '$lib/Resume/data.js';
+	import tempData from '$lib/Resume/yonina-resume.json';
 
 	const resumeInfo = tempData;
 	const dateFormat = {
@@ -11,4 +10,4 @@
 	};
 </script>
 
-<Resume {resumeInfo} skills={rafiSkills} {dateFormat} />
+<Resume {resumeInfo} {dateFormat} />

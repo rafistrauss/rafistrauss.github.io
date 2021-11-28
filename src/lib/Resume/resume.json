@@ -43,6 +43,27 @@
 			"studyType": "Bachelor of Arts"
 		}
 	],
+	"skills": [
+		{
+			"name": "HTML5/CSS3/SASS"
+		},
+		{
+			"name": "Javascript"
+		},
+		{
+			"name": "git"
+		},
+		{
+			"name": "React"
+		},
+		
+		{
+			"name": "PHP"
+		},
+		{
+			"name": "SQL"
+		}
+	],
 	"work": [
 		{
 			"description": "",

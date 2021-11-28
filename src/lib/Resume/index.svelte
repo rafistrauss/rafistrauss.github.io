@@ -1,7 +1,6 @@
 <script>
 	/** @type {Resume} */
 	export let resumeInfo;
-	export let skills;
 	export let dateFormat;
 	import gemIcon from '$lib/Resume/gem.svg';
 
@@ -18,51 +17,53 @@
 <div class="cv instaFade wrap">
 	<div class="mainDetails">
 		<div id="name">
-			<h1 class="quickFade delayTwo">{resumeInfo.basics.name}</h1>
-			<h4 class="quickFade delayThree">{resumeInfo.basics.label}</h4>
-			<h4 class="quickFade delayThree">{resumeInfo.basics.location.city}</h4>
+			<h1 class="quickFade delayTwo">{resumeInfo?.basics?.name ?? ""}</h1>
+			<h4 class="quickFade delayThree">{resumeInfo?.basics?.label ?? ""}</h4>
+			<h4 class="quickFade delayThree">{resumeInfo?.basics?.location?.city ?? ""}</h4>
 		</div>
 
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li><a href="mailto:{resumeInfo.basics.email}">{resumeInfo.basics.email}</a></li>
+				<li><a href="mailto:{resumeInfo?.basics?.email ?? ""}">{resumeInfo?.basics?.email ?? ""}</a></li>
 			</ul>
 		</div>
 		<div class="clear" />
 	</div>
 
 	<div id="mainArea" class="quickFade delayFive">
-		<section>
-			<div class="sectionTitle"><h1>Work Experience</h1></div>
+		{#if resumeInfo?.work?.length}
+			<section>
+				<div class="sectionTitle"><h1>Work Experience</h1></div>
 
-			<div class="sectionContent js-experience-section">
-				<article class="experience">
-					{#each resumeInfo.work as item}
-						<div class="experience__item">
-							<div>
-								<h2>{item.position}</h2>
-								<p class="subDetails">
-									{getDateFromDatestamp(item.startDate).toLocaleString('default', dateFormat)} - {item.endDate
-										? getDateFromDatestamp(item.endDate).toLocaleString('default', dateFormat)
-										: 'Present'}
-								</p>
+				<div class="sectionContent js-experience-section">
+					<article class="experience">
+						{#each resumeInfo.work as item}
+							<div class="experience__item">
+								<div>
+									<h2>{item.position}</h2>
+									<p class="subDetails">
+										{getDateFromDatestamp(item.startDate).toLocaleString('default', dateFormat)} - {item.endDate
+											? getDateFromDatestamp(item.endDate).toLocaleString('default', dateFormat)
+											: 'Present'}
+									</p>
+								</div>
+								<h3 class="companyName">{item.name}</h3>
+								{#if item.highlights}
+									<!-- content here -->
+									<ul>
+										{#each item.highlights as task}
+											<li>{@html task}</li>
+										{/each}
+									</ul>
+								{/if}
 							</div>
-							<h3 class="companyName">{item.name}</h3>
-							{#if item.highlights}
-								<!-- content here -->
-								<ul>
-									{#each item.highlights as task}
-										<li>{@html task}</li>
-									{/each}
-								</ul>
-							{/if}
-						</div>
-					{/each}
-				</article>
-			</div>
-			<div class="clear" />
-		</section>
-		{#if resumeInfo.awards?.length}
+						{/each}
+					</article>
+				</div>
+				<div class="clear" />
+			</section>
+		{/if}
+		{#if resumeInfo?.awards?.length}
 			<section>
 				<div class="sectionTitle"><h1>Awards</h1></div>
 				<div class="sectionContent">
@@ -96,14 +97,14 @@
 			</section>
 		{/if}
 
-		{#if skills?.length}
+		{#if resumeInfo?.skills?.length}
 			<section>
 				<div class="sectionTitle"><h1>Key Skills</h1></div>
 
 				<div class="sectionContent">
 					<ul class="keySkills">
-						{#each skills as skill}
-							<li>{skill}</li>
+						{#each resumeInfo.skills as skill}
+							<li>{skill.name}</li>
 						{/each}
 					</ul>
 				</div>
@@ -111,17 +112,22 @@
 			</section>
 		{/if}
 
-		<section id="Education">
-			<div class="sectionTitle"><h1>Education</h1></div>
+		{#if resumeInfo?.education?.length}
+			 <section id="Education">
+				 <div class="sectionTitle"><h1>Education</h1></div>
+	 
+				 <div class="sectionContent">
+					 {#each resumeInfo.education as education}
+						  <article>
+							  <h2>{education.studyType}, {education.area}</h2>
+							  <p class="subDetails">{education.institution}</p>
+						  </article>
+					 {/each}
+				 </div>
+				 <div class="clear" />
+			 </section>
+		{/if}
 
-			<div class="sectionContent">
-				<article>
-					<h2>{resumeInfo.education[0].studyType}, {resumeInfo.education[0].area}</h2>
-					<p class="subDetails">{resumeInfo.education[0].institution}</p>
-				</article>
-			</div>
-			<div class="clear" />
-		</section>
 	</div>
 </div>
 
@@ -207,6 +213,7 @@
 	}
 
 	.cv {
+		width: 100%;
 		max-width: 54rem;
 		background: #fff;
 		margin: 30px auto;
@@ -225,6 +232,15 @@
 	@media print {
 		.mainDetails {
 			padding: 25px;
+		}
+
+		.cv {
+			max-width: none;
+			margin: 0;
+		}
+
+		@page {
+			margin: 0;
 		}
 	}
 

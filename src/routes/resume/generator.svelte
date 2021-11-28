@@ -53,6 +53,11 @@
     }
 </style>
 
+
+<svelte:head>
+    <title>Resume Generator: Generate a pretty beautiful resume from jsonresume data</title>
+</svelte:head>
+
 <div id="layout">
 
     <div>

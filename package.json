@@ -1,6 +1,6 @@
 {
 	"name": "rafistrauss.github.io",
-	"version": "2.6.0",
+	"version": "2.7.0",
 	"scripts": {
 		"dev": "svelte-kit dev -p 3003",
 		"build": "svelte-kit build",

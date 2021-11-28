@@ -51,12 +51,20 @@
     a {
         color: var(--secondary-accent-color);
     }
+
+    sub {
+        text-align: center;
+        margin-bottom: 1em;
+    }
 </style>
 
 
 <svelte:head>
     <title>Resume Generator: Generate a pretty beautiful resume from jsonresume data</title>
 </svelte:head>
+
+
+<sub>Alpha version: expect bugs!</sub>
 
 <div id="layout">
 
@@ -67,7 +75,7 @@
     
     <aside>
         <button on:click={generateResume}>Generate Resume</button>
-        <button>Reset</button>
+        <!-- <button>Reset</button> -->
         <p>Preview:</p>
         <Resume {resumeInfo} {dateFormat} />
     </aside>

@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
 	"basics": {
 		"email": "yrlevin@gmail.com",
-		"label": "Teacher",
+		"label": "Administrative Assistant",
 		"location": {
 			"city": "New York",
 			"region": "NY"
@@ -25,7 +25,11 @@
 			"url": "https://www.rynj.org/",
 			"location": "River Edge, NJ",
 			"startDate": "2020-08-01",
-			"endDate": "2021-05-01"
+			"endDate": "2021-05-01",
+			"highlights": [
+				"Managed the classroom effectively to encourage student participation, minimize distractions, and maintain a positive learning environment",
+				"Supervised students in and out of the classroom, including in the halls, on the playground, and in the cafeteria"
+			]
 		},
 		{
 			"url": "https://www.labottega.com/en/",
@@ -33,9 +37,9 @@
 			"position": "Administrative Assistant",
 			"name": "La Bottega",
 			"highlights": [
-				"Ensured organization in the office",
-				"Assisted around the office as needed",
-				"Helped with special projects as needed"
+				"Organized and prioritized documentation and filing, to ensure proper communication and data retrieval",
+				"Ensured organization throughout the office space",
+				"Assisted with special projects on an as-needed basis"
 			],
 			"startDate": "2016-12-01",
 			"location": "New York, NY"
@@ -62,51 +66,7 @@
 			],
 			"startDate": "2015-09-01",
 			"location": "New York, NY"
-		},
-		{
-			"endDate": "2014-08-01",
-			"position": "Camp Cooking and Baking Specialist",
-			"name": "Moshava Ba’ir",
-			"highlights": [
-				"Assisted five hundred campers, ages 4 - 11, on how to cook and bake",
-				"Taught campers how to read and understand baking measurements"
-			],
-			"startDate": "2014-06-01",
-			"location": "Paramus, NJ"
-		},
-		{
-			"endDate": "2013-05-01",
-			"position": "Youth Group Leader",
-			"name": "Riverdale Jewish Center",
-			"highlights": [
-				"Conducted services and organized games for children",
-				"Counseled adolescents with emotional difficulties and social needs"
-			],
-			"startDate": "2011-09-01",
-			"location": "Riverdale, NY"
-		},
-		{
-			"endDate": "2012-07-01",
-			"position": "Counselor",
-			"name": "Moshava Ba’ir",
-			"highlights": [
-				"Created and supervised camper activities",
-				"Ensured camper safety during events and trips"
-			],
-			"startDate": "2012-06-01",
-			"location": "Paramus, NJ"
-		},
-		{
-			"endDate": "2012-08-01",
-			"position": "Infirmary Assistant",
-			"name": "Moshava",
-			"highlights": [
-				"Collaborated with nurses during medical examinations",
-				"Maintained treatment rooms cleanliness and availability",
-				"Ensured patients comfort and calmness"
-			],
-			"startDate": "2012-07-01",
-			"location": "Honesdale, PA"
 		}
 	]
+
 }

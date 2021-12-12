@@ -25,6 +25,7 @@
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
 				<li><a href="mailto:{resumeInfo?.basics?.email ?? ""}">{resumeInfo?.basics?.email ?? ""}</a></li>
+				<li><a href="tel:{resumeInfo?.basics?.phone ?? ""}">{resumeInfo?.basics?.phone ?? ""}</a></li>
 			</ul>
 		</div>
 		<div class="clear" />
@@ -275,14 +276,13 @@
 		float: right;
 	}
 	#contactDetails ul {
-		list-style-type: none;
 		font-size: 0.9em;
 		margin-top: 2px;
 	}
 	#contactDetails ul li {
 		margin-bottom: 3px;
+		list-style-type: none;
 		color: #444;
-		display: inline;
 	}
 
 	.experience {

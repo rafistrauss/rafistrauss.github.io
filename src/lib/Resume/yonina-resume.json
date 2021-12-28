@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
 	"basics": {
 		"email": "yrlevin@gmail.com",
-		"label": "Substitute Teacher/Office Assistant",
+		"label": "Administrative Assistant",
 		"location": {
 			"city": "New York",
 			"region": "NY"
@@ -27,9 +27,8 @@
 			"startDate": "2020-08-01",
 			"endDate": "2021-05-01",
 			"highlights": [
-				"Ensured classroom and projects were kept clean and orderly",
-				"Oversaw the normal classroom rhythms and activities",
-				"Cared for students and aided them in class assignments"
+				"Managed the classroom effectively to encourage student participation, minimize distractions, and maintain a positive learning environment",
+				"Supervised students in and out of the classroom, including in the halls, on the playground, and in the cafeteria"
 			]
 		},
 		{
@@ -38,9 +37,9 @@
 			"position": "Administrative Assistant",
 			"name": "La Bottega",
 			"highlights": [
-				"Ensured organization in the office",
-				"Assisted around the office as needed",
-				"Helped with special projects as needed"
+				"Organized and prioritized documentation and filing, to ensure proper communication and data retrieval",
+				"Ensured organization throughout the office space",
+				"Assisted with special projects on an as-needed basis"
 			],
 			"startDate": "2016-12-01",
 			"location": "New York, NY"
@@ -69,4 +68,5 @@
 			"location": "New York, NY"
 		}
 	]
+
 }

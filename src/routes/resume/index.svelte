@@ -18,6 +18,12 @@
 	a {
 		color: var(--secondary-accent-color)
 	}
+
+	@media print {
+		p {
+			display: none;
+		}
+	}
 </style>
 
 <p>Like this resume template? Go to <a href="/resume/generator">the generator</a> to make your own from your jsonresume document</p>

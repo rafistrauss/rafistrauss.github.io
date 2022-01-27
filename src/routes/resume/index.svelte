@@ -26,6 +26,10 @@
 	}
 </style>
 
+<svelte:head>
+	<title>Rafi Strauss Portfolio: Resume</title>
+</svelte:head>
+
 <p>Like this resume template? Go to <a href="/resume/generator">the generator</a> to make your own from your jsonresume document</p>
 
 <Resume {resumeInfo} {dateFormat} />

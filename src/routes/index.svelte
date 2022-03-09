@@ -56,7 +56,7 @@
 			<div class="item__top-border" style="background-color: {item.color}; color: {item.textColor}">
 				{item.name}
 			</div>
-			<Picture className="item__image-link" imageSource="/projectImages/resized/{item.imageLink}" alt="" />
+			<Picture className="item__image-link" imageSource="/projectImages/resized/{item.imageLink}" />
 		</a>
 	{/each}
 </section>

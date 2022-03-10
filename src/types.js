@@ -1,14 +1,15 @@
 /**
  * @typedef {object} Resume
  * @property {string} $schema
- * @property {Awards[]} awards
- * @property {Basics} basics
- * @property {Education[]} education
- * @property {Work[]} work
+ * @property {awards[]} [awards]
+ * @property {basics} basics
+ * @property {education[]} education
+ * @property {skills[]} [skills]
+ * @property {work[]} work
  */
 
 /**
- * @typedef {object} Awards
+ * @typedef {object} awards
  * @property {string} awarder
  * @property {string} date
  * @property {string} summary
@@ -16,46 +17,51 @@
  */
 
 /**
- * @typedef {object} Basics
+ * @typedef {object} basics
  * @property {string} email
- * @property {string} label Job Description
- * @property {UserLocation} location
+ * @property {string} label
+ * @property {location} location
  * @property {string} name
  * @property {string} phone
- * @property {Profiles[]} profiles
- * @property {string} url
+ * @property {profiles[]} [profiles]
+ * @property {string} [url]
  */
 
 /**
- * @typedef {object} UserLocation
+ * @typedef {object} location
  * @property {string} city
  * @property {string} region
  */
 
 /**
- * @typedef {object} Profiles
+ * @typedef {object} profiles
  * @property {string} network
  * @property {string} url
  * @property {string} username
  */
 
 /**
- * @typedef {object} Education
+ * @typedef {object} education
  * @property {string} area
  * @property {string} institution
  * @property {string} studyType
  */
 
 /**
- * @typedef {object} Work
- * @property {string} description Description of company
+ * @typedef {object} skills
+ * @property {string} name
+ */
+
+/**
+ * @typedef {object} work
+ * @property {string} [description] Description of company
  * @property {string} [endDate]
  * @property {string[]} highlights List of tasks/highlights at company
  * @property {string} location Company location (city/state)
  * @property {string} name Company Name
  * @property {string} position Position Title
  * @property {string} startDate
- * @property {string} summary Summary of responsibilities
+ * @property {string} [summary] Summary of responsibilities
  */
 
 /**

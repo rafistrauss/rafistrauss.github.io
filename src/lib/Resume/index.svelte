@@ -9,8 +9,8 @@
 	 * @param {string} datestamp Datestamp in YYYY-MM-DD format
 	 */
 	const getDateFromDatestamp = (datestamp) => {
-		const [year, month, day] = datestamp.split('-');
-		return new Date(year, parseInt(month) - 1, day);
+		const [year, month, day] = datestamp.split('-').map(el => parseInt(el, 10));
+		return new Date(year, month - 1, day);
 	};
 </script>
 

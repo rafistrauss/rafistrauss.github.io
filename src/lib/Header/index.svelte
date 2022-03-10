@@ -2,10 +2,7 @@
 	import { page } from '$app/stores';
 
 	import IconLink from '$lib/IconLink/index.svelte';
-	import github from 'simple-icons/icons/github.js';
-	import stackoverflow from 'simple-icons/icons/stackoverflow.js';
-	import linkedin from 'simple-icons/icons/linkedin.js';
-	import gmail from 'simple-icons/icons/gmail.js';
+	import {siGithub, siStackoverflow, siLinkedin, siGmail } from 'simple-icons/icons';
 </script>
 
 <header>
@@ -26,28 +23,28 @@
 	<div class="contactLinks">
 		<IconLink
 			link="https://github.com/rafistrauss"
-			svg={github.svg}
+			svg={siGithub.svg}
 			title="Github Link"
-			label={github.title}
+			label={siGithub.title}
 			color="#388bfd"
 		/>
 		<IconLink
 			link="https://stackoverflow.com/users/1851509/general-twyckenham"
 			title="StackOverflow Link"
-			svg={stackoverflow.svg}
-			color="#{stackoverflow.hex}"
+			svg={siStackoverflow.svg}
+			color="#{siStackoverflow.hex}"
 		/>
 		<IconLink
 			title="LinkedIn Link"
 			link="https://www.linkedin.com/in/rafi-strauss-84043143/"
-			svg={linkedin.svg}
-			color="#{linkedin.hex}"
+			svg={siLinkedin.svg}
+			color="#{siLinkedin.hex}"
 		/>
 		<IconLink
 			link="mailto:rafi@rafistrauss.com"
 			title="Email link"
-			svg={gmail.svg}
-			color="#{gmail.hex}"
+			svg={siGmail.svg}
+			color="#{siGmail.hex}"
 		/>
 	</div>
 </header>

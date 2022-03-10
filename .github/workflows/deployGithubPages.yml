@@ -3,7 +3,7 @@ name: Deploy GH Pages only
 on:
   push:
     branches:
-      - 'feature/blog'
+      - update-dependencies
   workflow_dispatch:
 
 jobs:

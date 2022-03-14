@@ -8,13 +8,13 @@
 <header>
 	<nav>
 		<ul>
-			<li class:active={$page.path === '/'}>
+			<li class:active={$page.url.pathname === '/'}>
 				<a sveltekit:prefetch title="Home" href="/">Home</a>
 			</li>
-			<li class:active={$page.path.startsWith('/resume')}>
+			<li class:active={$page.url.pathname.startsWith('/resume')}>
 				<a sveltekit:prefetch title="Resume" href="/resume/">Resume</a>
 			</li>
-			<li class:active={$page.path.startsWith('/blog')}>
+			<li class:active={$page.url.pathname.startsWith('/blog')}>
 				<a sveltekit:prefetch title="Blog" href="/blog/">Blog</a>
 			</li>
 		</ul>

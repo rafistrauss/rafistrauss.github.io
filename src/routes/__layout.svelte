@@ -2,7 +2,13 @@
 	import Header from '$lib/Header/index.svelte';
 	import Footer from '$lib/Footer/index.svelte';
 	import '../app.css';
+
+	import { version } from "../../package.json";
 </script>
+
+<svelte:head>
+	<meta name="version" content="{version}" />
+</svelte:head>
 
 <Header />
 

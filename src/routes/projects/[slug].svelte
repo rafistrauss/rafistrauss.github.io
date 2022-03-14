@@ -18,13 +18,13 @@
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
-	export async function load({ page }) {
-		const projectData = items.find((project) => project.slug === page.params.slug);
+	export async function load({ params }) {
+		const projectData = items.find((project) => project.slug === params.slug);
 
 		if (!projectData) {
 			return {
 				status: 404,
-				error: new Error(`Could not load ${page.params.slug}`)
+				error: new Error(`Could not load ${params.slug}`)
 			};
 		}
 

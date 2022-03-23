@@ -5,25 +5,27 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta http-equiv="content-security-policy" content="">
-	<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-826de1c3.css">
+		<meta http-equiv="content-security-policy" content=""><title>Resume Generator: Generate a pretty beautiful resume from jsonresume data</title>
+	<link rel="stylesheet" href="/_app/assets/pages/resume/__layout.reset.svelte-0d26283e.css">
 	<link rel="stylesheet" href="/_app/assets/app-1943482d.css">
-	<link rel="modulepreload" href="/_app/start-a4881c44.js">
+	<link rel="stylesheet" href="/_app/assets/pages/resume/generator.svelte-4ed07916.css">
+	<link rel="stylesheet" href="/_app/assets/index-27ba8cbd.css">
+	<link rel="modulepreload" href="/_app/start-80a28573.js">
 	<link rel="modulepreload" href="/_app/chunks/vendor-5ad54de6.js">
 	<link rel="modulepreload" href="/_app/chunks/preload-helper-e4860ae8.js">
 	<link rel="modulepreload" href="/_app/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/_app/pages/__layout.svelte-be7f4205.js">
+	<link rel="modulepreload" href="/_app/pages/resume/__layout.reset.svelte-28d30e1f.js">
 	<link rel="modulepreload" href="/_app/chunks/app-66db62f6.js">
-	<link rel="modulepreload" href="/_app/pages/error.svelte-b93e2337.js">
+	<link rel="modulepreload" href="/_app/pages/resume/generator.svelte-bf7a3ed7.js">
+	<link rel="modulepreload" href="/_app/chunks/index-49a02c11.js">
+	<link rel="modulepreload" href="/_app/chunks/constants-d5653a49.js">
 	</head>
 	<body>
 		<div id="svelte">
 
 
-
-
 <header class="svelte-3hohdq"><nav class="svelte-3hohdq"><ul class="svelte-3hohdq"><li class="svelte-3hohdq"><a sveltekit:prefetch title="Home" href="/" class="svelte-3hohdq">Home</a></li>
-			<li class="svelte-3hohdq"><a sveltekit:prefetch title="Resume" href="/resume/" class="svelte-3hohdq">Resume</a></li>
+			<li class="svelte-3hohdq active"><a sveltekit:prefetch title="Resume" href="/resume/" class="svelte-3hohdq">Resume</a></li>
 			<li class="svelte-3hohdq"><a sveltekit:prefetch title="Blog" href="/blog/" class="svelte-3hohdq">Blog</a></li></ul></nav>
 
 	<div class="contactLinks svelte-3hohdq"><a href="https://github.com/rafistrauss" class="iconLink svelte-1cmf7za" title="Github Link" target="_blank" rel="noreferrer" aria-label="GitHub" style="--hover-color: #388bfd"><!-- HTML_TAG_START --><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><!-- HTML_TAG_END -->
@@ -36,7 +38,33 @@
 </a></div>
 </header>
 
-<main class="svelte-1l5lemn"><h1>404 - Page Not Found</h1></main>
+<main class="svelte-6r1kxv">
+
+
+<sub class="svelte-pbo7kj">Alpha version: expect bugs!</sub>
+
+<div id="layout" class="svelte-pbo7kj"><div><p class="svelte-pbo7kj">Paste your <a href="https://jsonresume.org/" class="svelte-pbo7kj">jsonresume</a> data here</p>
+        <textarea name="" id="" cols="30" rows="10" class="svelte-pbo7kj"></textarea></div>
+    
+    <aside><button>Generate Resume</button>
+        
+        <p class="svelte-pbo7kj">Preview:</p>
+        <div class="cv instaFade wrap svelte-m2fjca"><div class="mainDetails svelte-m2fjca"><div id="name" class="svelte-m2fjca"><h1 class="quickFade delayTwo svelte-m2fjca"></h1>
+			<h4 class="quickFade delayThree svelte-m2fjca"></h4>
+			<h4 class="quickFade delayThree svelte-m2fjca"></h4></div>
+
+		<div id="contactDetails" class="quickFade delayFour svelte-m2fjca"><ul class="svelte-m2fjca"><li class="svelte-m2fjca"><a href="mailto:" class="svelte-m2fjca"></a></li>
+				<li class="svelte-m2fjca"><a href="tel:" class="svelte-m2fjca"></a></li></ul></div>
+		<div class="clear svelte-m2fjca"></div></div>
+
+	<div id="mainArea" class="quickFade delayFive svelte-m2fjca">
+		
+
+		
+
+		</div></div>
+
+</aside></div></main>
 
 <footer class="svelte-1gn6u0q">Built with <a href="https://kit.svelte.dev/" title="Sveltekit" target="_blank" rel="noreferrer" class="svelte-1gn6u0q"><img src="/_app/assets/svelte-logo-87df40b8.svg" alt="Sveltekit" class="svelte-1gn6u0q">
 		Sveltekit
@@ -44,24 +72,24 @@
 </footer>
 
 
-		<script type="module" data-hydrate="ccs9t4">
-		import { start } from "/_app/start-a4881c44.js";
+		<script type="module" data-hydrate="1pv8vov">
+		import { start } from "/_app/start-80a28573.js";
 		start({
-			target: document.querySelector('[data-hydrate="ccs9t4"]').parentNode,
+			target: document.querySelector('[data-hydrate="1pv8vov"]').parentNode,
 			paths: {"base":"","assets":""},
 			session: {},
 			route: true,
 			spa: false,
-			trailing_slash: "never",
+			trailing_slash: "always",
 			hydrate: {
 				status: 200,
 				error: null,
 				nodes: [
-					import("/_app/pages/__layout.svelte-be7f4205.js"),
-						import("/_app/pages/error.svelte-b93e2337.js")
+					import("/_app/pages/resume/__layout.reset.svelte-28d30e1f.js"),
+						import("/_app/pages/resume/generator.svelte-bf7a3ed7.js")
 				],
 				params: {},
-				routeId: "error"
+				routeId: "resume/generator"
 			}
 		});
 	</script></div>

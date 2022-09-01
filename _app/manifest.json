@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-ee62124e.js",
+    "file": "start-14563467.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -13,6 +13,7 @@
       ".svelte-kit/runtime/components/error.svelte",
       "src/routes/index.svelte",
       "src/routes/projects/[slug].svelte",
+      "src/routes/urlFixer.svelte",
       "src/routes/resume/__layout.reset.svelte",
       "src/routes/resume/index.svelte",
       "src/routes/resume/generator.svelte",
@@ -69,6 +70,18 @@
     ],
     "css": [
       "assets/pages/projects/_slug_.svelte-53e74c19.css"
+    ]
+  },
+  "src/routes/urlFixer.svelte": {
+    "file": "pages/urlFixer.svelte-698e8236.js",
+    "src": "src/routes/urlFixer.svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor-2e9c5b03.js"
+    ],
+    "css": [
+      "assets/pages/urlFixer.svelte-e19f8d6a.css"
     ]
   },
   "src/routes/resume/__layout.reset.svelte": {

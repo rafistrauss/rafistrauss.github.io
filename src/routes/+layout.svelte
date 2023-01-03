@@ -3,12 +3,12 @@
 	import Footer from '$lib/Footer/index.svelte';
 	import '../app.css';
 
-	// import { version } from "../../package.json";
+	import { version } from "../../package.json";
 </script>
 
-<!-- <svelte:head>
+<svelte:head>
 	<meta name="version" content="{version}" />
-</svelte:head> -->
+</svelte:head>
 
 <Header />
 

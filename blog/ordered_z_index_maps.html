@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-e79eaa8b.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/_page-ecf99cc6.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-21158030.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-c4572278.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-b464414b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/control-f5b05b5f.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-4a2e14b7.js">
+		<link rel="modulepreload" href="../_app/immutable/components/layout.svelte-a8cdeb9e.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/blog/_layout.js-e992bf42.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-90a7f2f4.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/blog/ordered_z_index_maps/_page.svx-d4c78332.js"><title>OZMap! The ultimate z-index solution</title><!-- HEAD_svelte-14ut8rz_START --><link href="https://cdn.jsdelivr.net/npm/prism-themes@1.7.0/themes/prism-vsc-dark-plus.css" rel="stylesheet"><!-- HEAD_svelte-14ut8rz_END --><!-- HEAD_svelte-1f5aw7b_START --><link rel="canonical" href="https://rafistrauss.com/blog/ordered_z_index_maps"><meta name="description" content="How ordered maps solve the final issue with z-indexes: 3rd party ones"><meta name="author" content="Rafi Strauss"><meta property="og:url" content="https://rafistrauss.com/blog/ordered_z_index_maps"><meta property="og:title" content="OZMap! The ultimate z-index solution"><meta property="og:type" content="article"><meta property="og:image" content="/z-index-og-image.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"><!-- HTML_TAG_START --><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"headline":"OZMap! The ultimate z-index solution","image":["https://example.com/photos/1x1/photo.jpg","https://example.com/photos/4x3/photo.jpg","https://example.com/photos/16x9/photo.jpg"],"datePublished":"2015-02-05T08:00:00+08:00","dateModified":"2015-02-05T09:20:00+08:00","author":{"@type":"Person","name":"Rafi Strauss","url":"https://rafistrauss.com/"}}</script><!-- HTML_TAG_END --><!-- HEAD_svelte-1f5aw7b_END -->
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<header class="svelte-3hohdq"><nav class="svelte-3hohdq"><ul class="svelte-3hohdq"><li class="svelte-3hohdq"><a sveltekit:prefetch title="Home" href="/" class="svelte-3hohdq">Home</a></li>
+			<li class="svelte-3hohdq"><a sveltekit:prefetch title="Resume" href="/resume/" class="svelte-3hohdq">Resume</a></li>
+			<li class="svelte-3hohdq active"><a sveltekit:prefetch title="Blog" href="/blog/" class="svelte-3hohdq">Blog</a></li></ul></nav>
+
+	<div class="contactLinks svelte-3hohdq"><a href="https://github.com/rafistrauss" class="iconLink svelte-1cmf7za" title="Github Link" target="_blank" rel="noreferrer" aria-label="GitHub" style="--hover-color: #388bfd"><!-- HTML_TAG_START --><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><!-- HTML_TAG_END -->
+</a>
+		<a href="https://stackoverflow.com/users/1851509/general-twyckenham" class="iconLink svelte-1cmf7za" title="StackOverflow Link" target="_blank" rel="noreferrer" aria-label="none" style="--hover-color: #F58025"><!-- HTML_TAG_START --><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Stack Overflow</title><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg><!-- HTML_TAG_END -->
+</a>
+		<a href="https://www.linkedin.com/in/rafi-strauss-84043143/" class="iconLink svelte-1cmf7za" title="LinkedIn Link" target="_blank" rel="noreferrer" aria-label="none" style="--hover-color: #0A66C2"><!-- HTML_TAG_START --><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><!-- HTML_TAG_END -->
+</a>
+		<a href="mailto:rafi@rafistrauss.com" class="iconLink svelte-1cmf7za" title="Email link" target="_blank" rel="noreferrer" aria-label="none" style="--hover-color: #EA4335"><!-- HTML_TAG_START --><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg><!-- HTML_TAG_END -->
+</a></div>
+</header>
+
+<main class="svelte-1l5lemn">
+
+
+<article class="blog-post"><h1 id="title">OZMap! The ultimate z-index solution</h1>
+<h2 id="outline">How ordered maps solve the final issue with z-indexes: 3rd party ones</h2>
+<p>Countless bytes have already been written about the issues with maintaining z-indexes and avoiding the classic problem of “battling 9’s” (i.e. “I need A to stack on top of B; let me just add another 9 to the z-index”). As such, I won’t go into too much detail about that particular aspect of the challenge; instead I will focus on a particular pitfall that I’ve never seen addressed before.</p>
+<p>Firstly, though, I will give a brief background so that the necessary details are in place. Z-indexes are how developers can specify which element should be on “top” when multiple elements overlap. A basic example is shown:</p>
+<div style="background-color: gainsboro; padding: 2em; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2em; place-items: center;"><div>Default <br><br>
+  <span style="display: inline-flex; place-items: center; place-content: center; position: relative; background: #1ebf00; width: 100px; height: 100px; z-index: 1;">z-index: 1;</span>
+  <span style="display: inline-flex; place-items: center; place-content: center; position: relative; background: orange; width: 100px; height: 100px; transform: translate(-15px, 15px); z-index: 2;">z-index: 2</span></div>
+  <div>Changing overlap with z-index <br><br>
+  <span style="display: inline-flex; place-items: center; place-content: center; position: relative; background: #1ebf00; width: 100px; height: 100px; z-index: 2;">z-index: 2</span>
+  <span style="display: inline-flex; place-items: center; place-content: center; position: relative; background: orange; width: 100px; height: 100px; transform: translate(-15px, 15px); z-index: 1;">z-index: 1;</span></div></div>
+<p>This works fairly well in many simple cases. The issue becomes one of maintainability - as your site grows and components elements get reused in multiple contexts, it can be hard to keep track of all the different z-indexes you may rely on. For example, at my last check NBC News had 21 unique z-indexes defined, ranging from <code>-1</code> to <code>20000000</code>. </p>
+<h3 id="reconceiving-z-indexes"><a href="#reconceiving-z-indexes">Reconceiving z-indexes</a></h3>
+<p>The problem partially stems from a misguided view of what a z-index <em>actually</em> is. Technically, z-indexes are <strong>cardinal numbers</strong>, where the value of the number matters intrinsically. As an analogy, money can be thought of as cardinal, since $100 is better than $1.</p>
+<p>Conversely, an <strong>ordinal number</strong> is one that delineates an <em>order</em>, e.g. First, Second, Fifth, and the like. Think of a race, where the actual time each person runs is almost immaterial (save for things like world records); what matters is who comes First, who comes after, and so on.</p>
+<p>Z-indexes are best visualized as ordinals. To use our above example</p>
+<div style="background-color: gainsboro; padding: 2em; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2em; place-items: center;"><div>Default <br><br>
+  <span style="display: inline-flex; place-items: center; place-content: center; position: relative; background: #1ebf00; width: 100px; height: 100px; z-index: 1;">z-index: 1;</span>
+  <span style="display: inline-flex; place-items: center; place-content: center; position: relative; background: orange; width: 100px; height: 100px; transform: translate(-15px, 15px); z-index: 2;">z-index: 2</span></div>
+  <div>Very large z-index <br><br>
+  <span style="display: inline-flex; place-items: center; place-content: center; position: relative; background: #1ebf00; width: 100px; height: 100px; z-index: 1;">z-index: 1</span>
+  <span style="display: inline-flex; place-items: center; place-content: center; position: relative; background: orange; width: 100px; height: 100px; transform: translate(-15px, 15px); z-index: 999;">z-index: 999;</span></div></div>
+<p>A z-index of <code>999</code> is no better than <code>2</code> – the only thing that matters is a sufficiently large z-index for the element you wish to appear on top.</p>
+<h3 id="using-sass-lists"><a href="#using-sass-lists">Using Sass lists</a></h3>
+<p>Sass lists are a great way to use this new way of thinking in practice. Instead of having to keep track of a slew of different numbers, you can just make a list with the elements in the order they should stack, then reference the desired element with the <code>index</code> function:</p>
+<pre class="language-sass"><!-- HTML_TAG_START --><code class="language-sass"><span class="token variable-line"><span class="token variable">$elementList</span><span class="token punctuation">:</span> (main, header, modal);</span>
+
+<span class="token selector">main &#123;</span>
+<span class="token property-line">  <span class="token property">z-index</span><span class="token punctuation">:</span> index(<span class="token variable">$elementList</span>, main);</span>
+<span class="token selector">&#125;</span>
+
+<span class="token selector">header &#123;</span>
+<span class="token property-line">  <span class="token property">z-index</span><span class="token punctuation">:</span> index(<span class="token variable">$elementList</span>, header);</span>
+<span class="token selector">&#125;</span>
+
+<span class="token selector">.modal &#123;</span>
+<span class="token property-line">  <span class="token property">z-index</span><span class="token punctuation">:</span> index(<span class="token variable">$elementList</span>, modal);</span>
+<span class="token selector">&#125;</span>
+</code><!-- HTML_TAG_END --></pre>
+<p>which would compile to</p>
+<pre class="language-css"><!-- HTML_TAG_START --><code class="language-css"><span class="token selector">main</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">header</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.modal</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<p>To make this method especially cool, since the z-indexes are generated at compile-time we no longer have any issues if we need to slip a new element into the mix. Adding something like a <code>notification</code> element into the list before the <code>header</code> element would automatically bump the generated z-index for <code>header</code> to 3. </p>
+<p>In my opinion, this is <em>the</em> absolute best way to handle z-indexes – with one caveat. What do you do if there’s a 3rd party element on your page that defines its own z-index, and it doesn’t fall nicely into your list of elements?</p>
+<p>An alternative approach that I’ve seen proposed is to create a map of your z-indexes, so they are all organized in the same location, something like</p>
+<pre class="language-scss"><!-- HTML_TAG_START --><code class="language-scss"><span class="token property"><span class="token variable">$zMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token property">main</span><span class="token punctuation">:</span> 1<span class="token punctuation">,</span>
+  <span class="token property">header</span><span class="token punctuation">:</span> 2<span class="token punctuation">,</span>
+  <span class="token property">modal</span><span class="token punctuation">:</span> 3<span class="token punctuation">,</span>
+<span class="token punctuation">)</span></code><!-- HTML_TAG_END --></pre>
+<p>This solves the issue of arbitrary z-indexes posed by 3rd party elements, but it removes the benefit of ordered &amp; automatically incrementing elements. Can we get the benefits of each of these approaches?</p>
+<h3 id="ordered-z-index-maps-ozmap-to-the-rescue"><a href="#ordered-z-index-maps-ozmap-to-the-rescue">Ordered z-index maps (OZMap) to the rescue</a></h3>
+<p>With a little bit of ingenuity I believe we can eat our cake &amp; have it, too. We do this by creating a new kind of map with the following 2 rules:</p>
+<ol><li>The elements of the map may contain <code>null</code> (to indicate that the z-index value should be set automatically)</li>
+<li>The elements of the map may contain a hardcoded number, to be used as the z-index for that element.<ul><li>Note that the value <strong>must</strong> be greater than any preceding element, to maintain the order</li></ul></li></ol>
+<p>An example of what such a map and a function to use it might look like:</p>
+<pre class="language-scss"><!-- HTML_TAG_START --><code class="language-scss"><span class="token property"><span class="token variable">$globalZIndexes</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+  <span class="token property">a</span><span class="token punctuation">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+  <span class="token property">b</span><span class="token punctuation">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+  <span class="token property">c</span><span class="token punctuation">:</span> 2000<span class="token punctuation">,</span>
+  <span class="token property">d</span><span class="token punctuation">:</span> <span class="token null keyword">null</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">@function</span> <span class="token function">getZIndex</span><span class="token punctuation">(</span><span class="token variable">$listKey</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">@if</span> <span class="token function">map-has-key</span><span class="token punctuation">(</span><span class="token variable">$globalZIndexes</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$key</span></span><span class="token punctuation">:</span> <span class="token variable">$listKey</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token property"><span class="token variable">$zAccumulator</span></span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+
+    <span class="token keyword">@each</span> <span class="token selector"><span class="token variable">$key</span>, <span class="token variable">$val</span> in <span class="token variable">$globalZIndexes</span> </span><span class="token punctuation">&#123;</span>
+      <span class="token keyword">@if</span> <span class="token selector"><span class="token variable">$val</span> == null </span><span class="token punctuation">&#123;</span>
+        <span class="token property"><span class="token variable">$zAccumulator</span></span><span class="token punctuation">:</span> <span class="token variable">$zAccumulator</span> <span class="token operator">+</span> 1<span class="token punctuation">;</span>
+        <span class="token property"><span class="token variable">$val</span></span><span class="token punctuation">:</span> <span class="token variable">$zAccumulator</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+
+      <span class="token keyword">@else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">@if</span> <span class="token selector"><span class="token variable">$val</span> &lt;= <span class="token variable">$zAccumulator</span> </span><span class="token punctuation">&#123;</span>
+          <span class="token comment">//* If the z-index is not greater than the elements preceding it,</span>
+          <span class="token comment">//* the whole element-order paradigm is invalidated</span>
+          @error <span class="token string">"z-index for #&#123;$key&#125; must be greater than the preceding value!"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token property"><span class="token variable">$zAccumulator</span></span><span class="token punctuation">:</span> <span class="token variable">$val</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+
+      <span class="token keyword">@if</span> <span class="token selector"><span class="token variable">$key</span> == <span class="token variable">$listKey</span> </span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">@return</span> <span class="token variable">$zAccumulator</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token keyword">@else</span> <span class="token punctuation">&#123;</span>
+    <span class="token atrule"><span class="token rule">@error</span> <span class="token string">"#&#123;$listKey&#125; doesn't exist in the $globalZIndexes map"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+.a</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token function">getZIndex</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.b </span><span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token function">getZIndex</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.c </span><span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token function">getZIndex</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token selector">.d </span><span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> <span class="token function">getZIndex</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+</code><!-- HTML_TAG_END --></pre>
+<p>which would compile to</p>
+<pre class="language-css"><!-- HTML_TAG_START --><code class="language-css"><span class="token selector">.a</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.b</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.c</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 2000<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token selector">.d</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">z-index</span><span class="token punctuation">:</span> 2001<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+</code><!-- HTML_TAG_END --></pre>
+<p>Thus, we have achieved both convenience with auto-incrementing z-indexes AND flexibility for 3rd-party defined z-indexes.</p>
+</article></main>
+
+<footer class="svelte-1gn6u0q">Built with <a href="https://kit.svelte.dev/" title="Sveltekit" target="_blank" rel="noreferrer" class="svelte-1gn6u0q"><img src="/_app/immutable/assets/svelte-logo-87df40b8.svg" alt="Sveltekit" class="svelte-1gn6u0q">
+		Sveltekit
+	</a>
+</footer>
+
+
+		<script type="module" data-sveltekit-hydrate="gttv2t">
+			import { start } from "../_app/immutable/start-21158030.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="gttv2t"]').parentNode,
+				version: "1672706367545",
+				hydrate: {
+					node_ids: [0, 2, 7],
+					data: [null,null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>

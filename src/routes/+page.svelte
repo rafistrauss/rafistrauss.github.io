@@ -1,11 +1,7 @@
-<script context="module">
-	export const prerender = true;
-	import { items } from '$lib/projectData.js';
-	import Picture from '$lib/Picture/index.svelte';
-</script>
-
 <script>
 	import { onMount } from 'svelte';
+	import { items } from '$lib/projectData.js';
+	import Picture from '$lib/Picture/index.svelte';
 
 	const pageAlreadyVisitedKey = 'pageVisited';
 	const pageAlreadyVisitedValue = 'true';

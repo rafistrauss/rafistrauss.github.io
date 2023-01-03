@@ -1,6 +1,19 @@
 import fs from 'fs';
 import { items } from './src/lib/projectData.js';
 
+import { readdir } from 'node:fs/promises';
+import { join } from 'node:path';
+
+const deepReadDir = async (dirPath) =>
+	await Promise.all(
+		(
+			await readdir(dirPath, { withFileTypes: true })
+		).map(async (dirent) => {
+			const path = join(dirPath, dirent.name);
+			return dirent.isDirectory() ? await deepReadDir(path) : path;
+		})
+	);
+
 /**
  * @param  {string} url
  * @param  {string} lastModified
@@ -26,10 +39,11 @@ const mainUrls = ['/', '/resume/', '/blog/'];
 
 const projectUrls = items.map((item) => `/projects/${item.slug}`);
 
-const blogUrls = fs
-	.readdirSync('./src/routes/blog/')
+const blogFiles = await deepReadDir('src/routes/blog');
+const blogUrls = blogFiles
+	.flat(Number.POSITIVE_INFINITY)
 	.filter((fileName) => fileName.endsWith('.svx'))
-	.map((fileName) => `/blog/${fileName.replace('.svx', '')}`);
+	.map((fileName) => `/blog/${fileName.replace('/+page.svx', '').replace('src/routes/blog', '')}`);
 
 const allUrls = [...mainUrls, ...projectUrls, ...blogUrls];
 

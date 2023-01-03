@@ -2,7 +2,6 @@
 	/** @type {Resume} */
 	export let resumeInfo;
 	export let dateFormat;
-	import gemIcon from '$lib/Resume/gem.svg';
 
 	/**
 	 *
@@ -73,11 +72,7 @@
 							<div class="experience__item">
 								<div>
 									<h2>
-										<img
-											src={gemIcon}
-											style="height: 0.85em; margin-right: 4px;"
-											alt=""
-										/>{award.title}
+										{award.title}
 									</h2>
 									<p class="subDetails">
 										{new Date(award.date).toLocaleString('default', {

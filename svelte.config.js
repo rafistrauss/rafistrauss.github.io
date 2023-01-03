@@ -8,18 +8,7 @@ const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	preprocess: [mdsvex(mdsvexConfig)],
 	kit: {
-		adapter: adapter(),
-		prerender: {
-			default: true
-		},
-		trailingSlash: 'always'
-	},
-	vite: {
-		server: {
-			fs: {
-				allow: ['..']
-			}
-		}
+		adapter: adapter()
 	}
 };
 

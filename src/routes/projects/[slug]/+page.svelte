@@ -1,44 +1,14 @@
-<script context="module">
-	import { items } from '$lib/projectData.js';
-	import Picture from '$lib/Picture/index.svelte';
-	import { browser, dev } from '$app/env';
-
-	// we don't need any JS on this page, though we'll load
-	// it in dev so that we get hot module replacement...
-	export const hydrate = dev;
-
-	// ...but if the client-side router is already loaded
-	// (i.e. we came here from elsewhere in the app), use it
-	export const router = browser;
-
-	// since there's no dynamic data here, we can prerender
-	// it so that it gets served as a static asset in prod
-	export const prerender = true;
-
-	/**
-	 * @type {import('@sveltejs/kit').Load}
-	 */
-	export async function load({ params }) {
-		const projectData = items.find((project) => project.slug === params.slug);
-
-		if (!projectData) {
-			return {
-				status: 404,
-				error: new Error(`Could not load ${params.slug}`)
-			};
-		}
-
-		return {
-			props: {
-				projectData
-			}
-		};
-	}
-</script>
-
 <script>
+	import Picture from '$lib/Picture/index.svelte';
+
+	
+	/** @type {import('./$types').PageData} */
+	export let data;
+	let { projectData } = data;
+	$: ({projectData} = data);
 	/** @type {Project} */
-	export let projectData;
+
+
 </script>
 
 <!-- markup (zero or more items) goes here -->

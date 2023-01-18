@@ -1,6 +1,6 @@
 {
 	"name": "rafistrauss.github.io",
-	"version": "3.0.2",
+	"version": "3.0.3",
 	"scripts": {
 		"dev": "vite dev --port 3003",
 		"build": "vite build",

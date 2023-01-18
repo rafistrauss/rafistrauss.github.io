@@ -43,8 +43,7 @@ const blogFiles = await deepReadDir('src/routes/blog');
 const blogUrls = blogFiles
 	.flat(Number.POSITIVE_INFINITY)
 	.filter((fileName) => fileName.endsWith('.svx'))
-	.map((fileName) => `/blog/${fileName.replace('/+page.svx', '')
-	.replace('src/routes/blog/', '')}`);
+	.map((fileName) => `/blog/${fileName.replace('/+page.svx', '').replace('src/routes/blog/', '')}`);
 
 const allUrls = [...mainUrls, ...projectUrls, ...blogUrls];
 

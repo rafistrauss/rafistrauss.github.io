@@ -35,7 +35,7 @@ const lastModifiedDate = new Date().toISOString().split('T')[0];
 
 const basePath = 'https://rafistrauss.com';
 
-const mainUrls = ['/', '/resume', '/blog'];
+const mainUrls = ['/', '/resume.html', '/blog.html'];
 
 const projectUrls = items.map((item) => `/projects/${item.slug}`);
 

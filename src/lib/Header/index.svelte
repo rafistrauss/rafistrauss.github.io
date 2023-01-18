@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 
 	import IconLink from '$lib/IconLink/index.svelte';
+	import Link from '$lib/Link.svelte';
 	import {siGithub, siStackoverflow, siLinkedin, siGmail } from 'simple-icons/icons';
 </script>
 
@@ -12,10 +13,10 @@
 				<a sveltekit:prefetch title="Home" href="/">Home</a>
 			</li>
 			<li class:active={$page.url.pathname.startsWith('/resume')}>
-				<a sveltekit:prefetch title="Resume" href="/resume/">Resume</a>
+				<Link link={'resume'} title='Resume' >Resume</Link>
 			</li>
 			<li class:active={$page.url.pathname.startsWith('/blog')}>
-				<a sveltekit:prefetch title="Blog" href="/blog/">Blog</a>
+				<Link link={'blog'} title='Blog' >Blog</Link>
 			</li>
 		</ul>
 	</nav>
@@ -109,11 +110,8 @@
 		border-top: var(--size) solid var(--accent-color);
 	}
 
+
 	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 1em;
 		color: var(--heading-color);
 		font-weight: 700;
 		font-size: 0.8rem;
@@ -123,7 +121,14 @@
 		transition: color 0.2s linear;
 	}
 
-	a:hover {
+	nav li {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		padding: 0 1em;
+	}
+
+	nav a:hover {
 		color: var(--accent-color);
 	}
 </style>

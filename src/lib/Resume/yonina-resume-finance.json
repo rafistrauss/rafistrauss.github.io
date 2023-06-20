@@ -2,7 +2,7 @@
 	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
 	"basics": {
 		"email": "yrlevin@gmail.com",
-		"label": "Administrative Assistant",
+		"label": "Finance and Operations Coordinator",
 		"location": {
 			"city": "New York",
 			"region": "NY"
@@ -20,12 +20,27 @@
 	],
 	"work": [
 		{
+			"name": "Yeshiva Rabbi Samson Raphael Hirsch",
+			"position": "Finance and Operations Manager",
+			"url": "https://www.yrsrh.org/",
+			"location": "New York, NY",
+			"startDate": "2021-12-01",
+			"highlights": [
+				"Managed day-to-day operations in finance office",
+				"Performed monthly reconciliation of all bank accounts, identifying and resolving discrepancies using QuickBooks.",
+				"Implemented novel organizational systems for tracking and automating payments, and donations",
+				"Collaborated with department heads to manage various special projects on-demand",
+				"Provided onboarding coaching for new hires, and coordinated the development of an HR department",
+				"Led the marketing and fundraising efforts for the entire school, including developing and executing campaigns across multiple channels"
+			]
+		},
+		{
 			"name": "Rosenbaum Yeshiva Of North Jersey",
 			"position": "Substitute Teacher",
 			"url": "https://www.rynj.org/",
 			"location": "River Edge, NJ",
 			"startDate": "2020-08-01",
-			"endDate": "2021-05-01",
+			"endDate": "2021-06-01",
 			"highlights": [
 				"Managed the classroom effectively to encourage student participation, minimize distractions, and maintain a positive learning environment",
 				"Supervised students in and out of the classroom, including in the halls, on the playground, and in the cafeteria"
@@ -33,7 +48,7 @@
 		},
 		{
 			"url": "https://www.labottega.com/en/",
-			"endDate": "2017-01-01",
+			"endDate": "2017-02-01",
 			"position": "Administrative Assistant",
 			"name": "La Bottega",
 			"highlights": [
@@ -41,15 +56,15 @@
 				"Ensured organization throughout the office space",
 				"Assisted with special projects on an as-needed basis"
 			],
-			"startDate": "2016-12-01",
+			"startDate": "2016-11-01",
 			"location": "New York, NY"
 		},
 		{
-			"endDate": "2016-04-01",
+			"endDate": "2016-05-01",
 			"position": "Sales & Public Relations Intern",
 			"name": "Nomi Network",
 			"highlights": [
-				"Researched and reached out to potential wholesale clients & direct sales opportunities",
+				"Researched and reached out to potential wholesale clients and direct sales opportunities",
 				"Assisted with pre-show projects and attend direct sales events",
 				"Assisted with special projects as needed"
 			],

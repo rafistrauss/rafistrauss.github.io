@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.6](https://github.com/rafistrauss/rafistrauss.github.io/compare/v3.0.5...v3.0.6) (2023-08-07)
+
+
+### Bug Fixes
+
+* Add missing file ([3810b5d](https://github.com/rafistrauss/rafistrauss.github.io/commit/3810b5d3ae83aad5722f68a6ebf3f691cabf081a))
+
 ## [3.0.5](https://github.com/rafistrauss/rafistrauss.github.io/compare/v3.0.4...v3.0.5) (2023-08-07)
 
 

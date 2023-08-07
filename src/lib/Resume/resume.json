@@ -10,7 +10,7 @@
 	],
 	"basics": {
 		"email": "rafi@rafistrauss.com",
-		"label": "Software Engineer",
+		"label": "Software Engineering Manager",
 		"location": {
 			"city": "New York",
 			"region": "NY"
@@ -24,9 +24,9 @@
 				"username": "rafistrauss"
 			},
 			{
-				"network": "StackOverflow",
+				"network": "Stack-Overflow",
 				"url": "https://stackoverflow.com/users/1851509/general-twyckenham",
-				"username": "General_Twyckenham                "
+				"username": "General_Twyckenham"
 			},
 			{
 				"network": "LinkedIn",
@@ -66,9 +66,7 @@
 	"work": [
 		{
 			"description": "",
-			"highlights": [
-				"Oversaw hugely successful SEO improvements for elections coverage"
-			],
+			"highlights": ["Oversaw hugely successful SEO improvements for elections coverage"],
 			"location": "New York, NY",
 			"name": "NBCUniversal Media, LLC",
 			"position": "Senior Engineering Manager",

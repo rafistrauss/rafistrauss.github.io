@@ -13,16 +13,20 @@
 		box-sizing: border-box;
 	}
 
+	:global(li) {
+		margin-bottom: .25em !important;
+	}
+
 	
 	@media print {
 		:global(body) {
-			background: none;
+			background: none !important;
 		}
 
-		main {
-			padding: 0;
-			margin: 0;
-			widows: 100%;
+		:global(main) {
+			padding: 0 !important;
+			margin: 0 !important;
+			widows: 100% !important;
 		}
 	}
 </style>

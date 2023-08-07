@@ -6,3 +6,4 @@ package-lock.json
 html-resume/
 *.svelte
 pnpm-lock.yaml
+CHANGELOG.md

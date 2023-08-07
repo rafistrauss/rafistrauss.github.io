@@ -1,0 +1,84 @@
+{
+	"$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+	"basics": {
+		"email": "yrlevin@gmail.com",
+		"label": "Office Manager",
+		"location": {
+			"city": "New York",
+			"region": "NY"
+		},
+		"name": "Yonina Levin",
+		"phone": "718-288-5790",
+		"profiles": []
+	},
+	"education": [
+		{
+			"area": "Sociology",
+			"institution": "Lander College for Women",
+			"studyType": "Bachelor of Science"
+		}
+	],
+	"work": [
+		{
+			"name": "Yeshiva Rabbi Samson Raphael Hirsch",
+			"position": "Office Manager",
+			"url": "https://www.yrsrh.org/",
+			"location": "New York, NY",
+			"startDate": "2021-12-01",
+			"highlights": [
+				"Maintained a friendly and approachable demeanor, effectively addressing inquiries, concerns, and providing accurate information promptly to students, parents, and staff.",
+				"Facilitated the smooth operation of school activities by ordering necessary supplies and implementing efficient inventory management practices.",
+				"Provided onboarding coaching for new hires, and coordinated the development of an HR department",
+				"Led the marketing and fundraising efforts for the entire school, including developing and executing campaigns across multiple channels"
+			]
+		},
+		{
+			"name": "Rosenbaum Yeshiva Of North Jersey",
+			"position": "Substitute Teacher",
+			"url": "https://www.rynj.org/",
+			"location": "River Edge, NJ",
+			"startDate": "2020-08-01",
+			"endDate": "2021-06-01",
+			"highlights": [
+				"Managed the classroom effectively to encourage student participation, minimize distractions, and maintain a positive learning environment",
+				"Supervised students in and out of the classroom, including in the halls, on the playground, and in the cafeteria"
+			]
+		},
+		{
+			"url": "https://www.labottega.com/en/",
+			"endDate": "2017-02-01",
+			"position": "Administrative Assistant",
+			"name": "La Bottega",
+			"highlights": [
+				"Organized and prioritized documentation and filing, to ensure proper communication and data retrieval",
+				"Ensured organization throughout the office space",
+				"Assisted with special projects on an as-needed basis"
+			],
+			"startDate": "2016-11-01",
+			"location": "New York, NY"
+		},
+		{
+			"endDate": "2016-05-01",
+			"position": "Sales & Public Relations Intern",
+			"name": "Nomi Network",
+			"highlights": [
+				"Researched and reached out to potential wholesale clients and direct sales opportunities",
+				"Assisted with pre-show projects and attend direct sales events",
+				"Assisted with special projects as needed"
+			],
+			"startDate": "2016-02-01",
+			"location": "New York, NY"
+		},
+		{
+			"endDate": "2015-12-01",
+			"position": "Sales Assistant",
+			"name": "La Fiorentina",
+			"highlights": [
+				"Ensured organization in the office and showroom",
+				"Assisted with online and phone sales"
+			],
+			"startDate": "2015-09-01",
+			"location": "New York, NY"
+		}
+	]
+}

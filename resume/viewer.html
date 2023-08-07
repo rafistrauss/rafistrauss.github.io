@@ -5,22 +5,21 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta http-equiv="content-security-policy" content="">
-		<link href="../_app/immutable/assets/_layout-64ddcf99.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/_layout-60a1c7d2.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/index-2c819323.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/start-1caa25a9.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-0278f8dc.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-43c8e91e.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/control-f5b05b5f.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-55cafc1b.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/resume/(resume)/_layout.svelte-da57c9ec.js">
-		<link rel="modulepreload" href="../_app/immutable/modules/pages/resume/(resume)/_layout.js-a64e1aad.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-90a7f2f4.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/resume/(resume)/viewer/_page.svelte-269fe6fc.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-379a540c.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/constants-fca3c79b.js"><!-- HEAD_svelte-bsyaj5_START --><meta name="version" content="3.0.3"><!-- HEAD_svelte-bsyaj5_END -->
+		
+		<link href="../_app/immutable/assets/0.f5919a4d.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/3.86567c83.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/index.2c819323.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.40d5fae0.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.bb683dda.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.95e4f115.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/control.f5b05b5f.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.fac889dd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.a4192956.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.7ac42ea5.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/3.13a28cc9.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/11.ebe6b962.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.4637281f.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/constants.fca3c79b.js"><!-- HEAD_svelte-bsyaj5_START --><meta name="version" content="3.0.6"><!-- HEAD_svelte-bsyaj5_END -->
 	</head>
 	<body>
 		<div id="svelte">
@@ -44,30 +43,40 @@
 </a></div>
 </header>
 
-<main class="svelte-1l5lemn"><main class="svelte-6r1kxv">
+<main class="svelte-1l5lemn"><main class="svelte-lr5c9j">
 </main></main>
 
-<footer class="svelte-1gn6u0q">Built with <a href="https://kit.svelte.dev/" title="Sveltekit" target="_blank" rel="noreferrer" class="svelte-1gn6u0q"><img src="/_app/immutable/assets/svelte-logo-87df40b8.svg" alt="Sveltekit" class="svelte-1gn6u0q">
+<footer class="svelte-1gn6u0q">Built with <a href="https://kit.svelte.dev/" title="Sveltekit" target="_blank" rel="noreferrer" class="svelte-1gn6u0q"><img src="/_app/immutable/assets/svelte-logo.87df40b8.svg" alt="Sveltekit" class="svelte-1gn6u0q">
 		Sveltekit
 	</a>
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="1t64pa5">
-			import { start } from "../_app/immutable/start-1caa25a9.js";
+			
+			<script>
+				{
+					__sveltekit_fyny61 = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						env: {}
+					};
 
-			start({
-				env: {},
-				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1t64pa5"]').parentNode,
-				version: "1674061775935",
-				hydrate: {
-					node_ids: [0, 3, 11],
-					data: [null,null,null],
-					form: null
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.40d5fae0.js"),
+						import("../_app/immutable/entry/app.fac889dd.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3, 11],
+							data,
+							form: null,
+							error: null
+						});
+					});
 				}
-			});
-		</script>
-	</div>
+			</script>
+		</div>
 	</body>
 </html>

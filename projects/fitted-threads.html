@@ -5,20 +5,18 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<meta http-equiv="content-security-policy" content="">
-		<link href="../_app/immutable/assets/_layout-64ddcf99.css" rel="stylesheet">
-		<link href="../_app/immutable/assets/_page-9ebc2a47.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/start-1caa25a9.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-0278f8dc.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-43c8e91e.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/control-f5b05b5f.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-55cafc1b.js">
-		<link rel="modulepreload" href="../_app/immutable/components/pages/projects/_slug_/_page.svelte-4fcc0934.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index-5375b885.js">
-		<link rel="modulepreload" href="../_app/immutable/modules/pages/projects/_slug_/_page.js-9cc8ac55.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/_page-2c494ee4.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/projectData-986599ef.js"><title>Fitted Threads</title><!-- HEAD_svelte-bsyaj5_START --><meta name="version" content="3.0.3"><!-- HEAD_svelte-bsyaj5_END --><!-- HEAD_svelte-uzl9ka_START --><!-- HEAD_svelte-uzl9ka_END -->
+		
+		<link href="../_app/immutable/assets/0.f5919a4d.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/8.9ebc2a47.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.40d5fae0.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.bb683dda.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.95e4f115.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/control.f5b05b5f.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.fac889dd.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.a4192956.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.7ac42ea5.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/8.0e026edc.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.6011462a.js"><title>Fitted Threads</title><!-- HEAD_svelte-bsyaj5_START --><meta name="version" content="3.0.6"><!-- HEAD_svelte-bsyaj5_END --><!-- HEAD_svelte-uzl9ka_START --><!-- HEAD_svelte-uzl9ka_END -->
 	</head>
 	<body>
 		<div id="svelte">
@@ -58,27 +56,37 @@
  Anything technology related was my responsibility. As we were an online-only clothing store, I had the opportunity to learn about and utilize many different aspects of web development.<!-- HTML_TAG_END --></p>
 </section></main>
 
-<footer class="svelte-1gn6u0q">Built with <a href="https://kit.svelte.dev/" title="Sveltekit" target="_blank" rel="noreferrer" class="svelte-1gn6u0q"><img src="/_app/immutable/assets/svelte-logo-87df40b8.svg" alt="Sveltekit" class="svelte-1gn6u0q">
+<footer class="svelte-1gn6u0q">Built with <a href="https://kit.svelte.dev/" title="Sveltekit" target="_blank" rel="noreferrer" class="svelte-1gn6u0q"><img src="/_app/immutable/assets/svelte-logo.87df40b8.svg" alt="Sveltekit" class="svelte-1gn6u0q">
 		Sveltekit
 	</a>
 </footer>
 
 
-		<script type="module" data-sveltekit-hydrate="1tk96l5">
-			import { start } from "../_app/immutable/start-1caa25a9.js";
+			
+			<script>
+				{
+					__sveltekit_fyny61 = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						env: {}
+					};
 
-			start({
-				env: {},
-				paths: {"base":"","assets":""},
-				target: document.querySelector('[data-sveltekit-hydrate="1tk96l5"]').parentNode,
-				version: "1674061775935",
-				hydrate: {
-					node_ids: [0, 8],
-					data: [null,null],
-					form: null
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.40d5fae0.js"),
+						import("../_app/immutable/entry/app.fac889dd.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 8],
+							data,
+							form: null,
+							error: null
+						});
+					});
 				}
-			});
-		</script>
-	</div>
+			</script>
+		</div>
 	</body>
 </html>

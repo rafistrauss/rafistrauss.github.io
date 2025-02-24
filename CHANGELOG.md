@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/rafistrauss/rafistrauss.github.io/compare/v3.0.6...v3.1.0) (2025-02-24)
+
+
+### Features
+
+* retrigger build ([4bb5dbe](https://github.com/rafistrauss/rafistrauss.github.io/commit/4bb5dbefa0fe1c9266b15915f9a42decab05e8c9))
+
 ## [3.0.6](https://github.com/rafistrauss/rafistrauss.github.io/compare/v3.0.5...v3.0.6) (2023-08-07)
 
 

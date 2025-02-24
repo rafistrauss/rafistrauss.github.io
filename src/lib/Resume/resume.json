@@ -66,7 +66,12 @@
 	"work": [
 		{
 			"description": "",
-			"highlights": ["Oversaw hugely successful SEO improvements for elections coverage"],
+			"highlights": [
+  "Fostered a culture of technical excellence and team engagement, providing mentorship, career growth opportunities, and robust technical support.",
+  "Led SEO enhancements for elections coverage, significantly improving visibility and engagement.",
+  "Directed the migration to industry-standard video players, ensuring a modern, high-performance media experience.",
+  "Optimized test execution times, achieving over a 50% reduction to accelerate development cycles and improve developer efficiency."
+],
 			"location": "New York, NY",
 			"name": "NBCUniversal Media, LLC",
 			"position": "Senior Engineering Manager",

@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.2.0](https://github.com/rafistrauss/rafistrauss.github.io/compare/v3.1.0...v3.2.0) (2025-03-03)
+
+
+### Features
+
+* add toggle options for displaying resume sections ([9acc901](https://github.com/rafistrauss/rafistrauss.github.io/commit/9acc901408dcc1df6940f79dcaf2e022b099f6f7))
+
+
+### Bug Fixes
+
+* adjust CSS to prevent page breaks in experience items ([8fc47d9](https://github.com/rafistrauss/rafistrauss.github.io/commit/8fc47d9ccf5ae371e56caac1b2715b8b802114db))
+
 ## [3.1.0](https://github.com/rafistrauss/rafistrauss.github.io/compare/v3.0.6...v3.1.0) (2025-02-24)
 
 

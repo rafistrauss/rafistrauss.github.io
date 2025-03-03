@@ -179,6 +179,7 @@
 
 	.experience__item {
 		margin-top: 1em;
+		page-break-inside: avoid;
 	}
 
 	.experience__item > div {
@@ -280,9 +281,6 @@
 		color: #444;
 	}
 
-	.experience {
-		page-break-inside: avoid;
-	}
 	.experience:not(:first-child) {
 		margin-top: 1em;
 	}
@@ -294,7 +292,6 @@
 	section {
 		border-top: 1px solid #dedede;
 		padding: 10px 0 0;
-		page-break-inside: avoid;
 	}
 
 	@media all and (min-width: 768px) {

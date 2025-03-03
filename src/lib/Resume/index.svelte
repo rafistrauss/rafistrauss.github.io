@@ -3,6 +3,13 @@
 	export let resumeInfo;
 	export let dateFormat;
 
+	let showWork = true;
+	let showAwards = true;
+	let showSkills = true;
+	let showEducation = true;
+
+	let showWorkItems = resumeInfo?.work?.map(() => true) ?? [];
+
 	/**
 	 *
 	 * @param {string} datestamp Datestamp in YYYY-MM-DD format
@@ -31,14 +38,22 @@
 	</div>
 
 	<div id="mainArea" class="quickFade delayFive">
-		{#if resumeInfo?.work?.length}
+		<div class="toggle-buttons">
+			<label><input type="checkbox" bind:checked={showWork} /> Show Work Experience</label>
+			<label><input type="checkbox" bind:checked={showAwards} /> Show Awards</label>
+			<label><input type="checkbox" bind:checked={showSkills} /> Show Key Skills</label>
+			<label><input type="checkbox" bind:checked={showEducation} /> Show Education</label>
+		</div>
+
+		{#if showWork && resumeInfo?.work?.length}
 			<section>
 				<div class="sectionTitle"><h1>Work Experience</h1></div>
 
 				<div class="sectionContent js-experience-section">
 					<article class="experience">
-						{#each resumeInfo.work as item}
-							<div class="experience__item">
+						{#each resumeInfo.work as item, idx}
+							<div class="experience__item {showWorkItems[idx] ? '' : 'hidden'}">
+							<label class="printHidden"><input type="checkbox" bind:checked={showWorkItems[idx]} /> Show this item</label>
 								<div>
 									<h2>{item.position}</h2>
 									<p class="subDetails">
@@ -63,8 +78,9 @@
 				<div class="clear" />
 			</section>
 		{/if}
-		{#if resumeInfo?.awards?.length}
-			<section>
+
+		{#if showAwards && resumeInfo?.awards?.length}
+			<section class="page-break-avoid">
 				<div class="sectionTitle"><h1>Awards</h1></div>
 				<div class="sectionContent">
 					<article class="awards">
@@ -93,7 +109,7 @@
 			</section>
 		{/if}
 
-		{#if resumeInfo?.skills?.length}
+		{#if showSkills && resumeInfo?.skills?.length}
 			<section>
 				<div class="sectionTitle"><h1>Key Skills</h1></div>
 
@@ -108,7 +124,7 @@
 			</section>
 		{/if}
 
-		{#if resumeInfo?.education?.length}
+		{#if showEducation && resumeInfo?.education?.length}
 			 <section id="Education">
 				 <div class="sectionTitle"><h1>Education</h1></div>
 	 
@@ -180,6 +196,17 @@
 	.experience__item {
 		margin-top: 1em;
 		page-break-inside: avoid;
+	}
+
+
+	.experience__item.hidden {
+		opacity: 0.3;
+	}
+
+	@media print {
+		.experience__item.hidden {
+		display: none;
+	}
 	}
 
 	.experience__item > div {
@@ -431,5 +458,28 @@
 		100% {
 			opacity: 1;
 		}
+	}
+
+	.toggle-buttons {
+		margin-bottom: 1em;
+	}
+
+	@media print {
+		.toggle-buttons {
+			display: none;
+		}
+
+		.printHidden {
+			display: none;
+		}
+
+		.page-break-avoid {
+			page-break-inside: avoid;
+		}
+
+	}
+
+	.toggle-buttons label {
+		margin-right: 1em;
 	}
 </style>

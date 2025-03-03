@@ -8,17 +8,17 @@
 		
 		<link href="../_app/immutable/assets/0.f5919a4d.css" rel="stylesheet">
 		<link href="../_app/immutable/assets/_page.ecf99cc6.css" rel="stylesheet">
-		<link rel="modulepreload" href="../_app/immutable/entry/start.d6f73c74.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/index.bb683dda.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.c32085da.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.481df25d.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.1df942cb.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons.fa878c27.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/control.f5b05b5f.js">
-		<link rel="modulepreload" href="../_app/immutable/entry/app.3d7bac1c.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.3814cd15.js">
 		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper.a4192956.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/0.7ab684b0.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/2.9091f411.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/layout.094e995d.js">
-		<link rel="modulepreload" href="../_app/immutable/nodes/7.f26c4a2c.js">
-		<link rel="modulepreload" href="../_app/immutable/chunks/_page.f8f6c8cb.js"><title>OZMap! The ultimate z-index solution</title><!-- HEAD_svelte-bsyaj5_START --><meta name="version" content="3.1.0"><!-- HEAD_svelte-bsyaj5_END --><!-- HEAD_svelte-14ut8rz_START --><link href="https://cdn.jsdelivr.net/npm/prism-themes@1.7.0/themes/prism-vsc-dark-plus.css" rel="stylesheet"><!-- HEAD_svelte-14ut8rz_END --><!-- HEAD_svelte-1f5aw7b_START --><link rel="canonical" href="https://rafistrauss.com/blog/ordered_z_index_maps"><meta name="description" content="How ordered maps solve the final issue with z-indexes: 3rd party ones"><meta name="author" content="Rafi Strauss"><meta property="og:url" content="https://rafistrauss.com/blog/ordered_z_index_maps"><meta property="og:title" content="OZMap! The ultimate z-index solution"><meta property="og:type" content="article"><meta property="og:image" content="/z-index-og-image.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"><!-- HTML_TAG_START --><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"headline":"OZMap! The ultimate z-index solution","image":["https://example.com/photos/1x1/photo.jpg","https://example.com/photos/4x3/photo.jpg","https://example.com/photos/16x9/photo.jpg"],"datePublished":"2015-02-05T08:00:00+08:00","dateModified":"2015-02-05T09:20:00+08:00","author":{"@type":"Person","name":"Rafi Strauss","url":"https://rafistrauss.com/"}}</script><!-- HTML_TAG_END --><!-- HEAD_svelte-1f5aw7b_END -->
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.d7cbc1a1.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/2.c6602eb6.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/layout.9abd2a11.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/7.ec9c937c.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page.f80818ad.js"><title>OZMap! The ultimate z-index solution</title><!-- HEAD_svelte-bsyaj5_START --><meta name="version" content="3.2.0"><!-- HEAD_svelte-bsyaj5_END --><!-- HEAD_svelte-14ut8rz_START --><link href="https://cdn.jsdelivr.net/npm/prism-themes@1.7.0/themes/prism-vsc-dark-plus.css" rel="stylesheet"><!-- HEAD_svelte-14ut8rz_END --><!-- HEAD_svelte-1f5aw7b_START --><link rel="canonical" href="https://rafistrauss.com/blog/ordered_z_index_maps"><meta name="description" content="How ordered maps solve the final issue with z-indexes: 3rd party ones"><meta name="author" content="Rafi Strauss"><meta property="og:url" content="https://rafistrauss.com/blog/ordered_z_index_maps"><meta property="og:title" content="OZMap! The ultimate z-index solution"><meta property="og:type" content="article"><meta property="og:image" content="/z-index-og-image.jpg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"><!-- HTML_TAG_START --><script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://google.com/article"},"headline":"OZMap! The ultimate z-index solution","image":["https://example.com/photos/1x1/photo.jpg","https://example.com/photos/4x3/photo.jpg","https://example.com/photos/16x9/photo.jpg"],"datePublished":"2015-02-05T08:00:00+08:00","dateModified":"2015-02-05T09:20:00+08:00","author":{"@type":"Person","name":"Rafi Strauss","url":"https://rafistrauss.com/"}}</script><!-- HTML_TAG_END --><!-- HEAD_svelte-1f5aw7b_END -->
 	</head>
 	<body>
 		<div id="svelte">
@@ -188,7 +188,7 @@
 			
 			<script>
 				{
-					__sveltekit_eyfhge = {
+					__sveltekit_1mlj7p5 = {
 						base: new URL("..", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -198,8 +198,8 @@
 					const data = [null,null,null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.d6f73c74.js"),
-						import("../_app/immutable/entry/app.3d7bac1c.js")
+						import("../_app/immutable/entry/start.481df25d.js"),
+						import("../_app/immutable/entry/app.3814cd15.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 2, 7],

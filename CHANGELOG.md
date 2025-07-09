@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.3.0](https://github.com/rafistrauss/rafistrauss.github.io/compare/v3.2.0...v3.3.0) (2025-07-09)
+
+
+### Features
+
+* add workflow_dispatch trigger to deployment workflow ([d377d53](https://github.com/rafistrauss/rafistrauss.github.io/commit/d377d536270b686fdc1aabd4f4c929e649fe49e8))
+
 ## [3.2.0](https://github.com/rafistrauss/rafistrauss.github.io/compare/v3.1.0...v3.2.0) (2025-03-03)
 
 

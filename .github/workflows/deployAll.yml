@@ -37,4 +37,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: cd rafistrauss.github.io/ && git pull
+          script: |
+            set -eu
+            cd rafistrauss.github.io/
+            branch=$(git symbolic-ref --short HEAD)
+            upstream_ref=$(git config --get "branch.$branch.merge")
+            GIT_TERMINAL_PROMPT=0 git pull --ff-only https://github.com/rafistrauss/rafistrauss.github.io.git "$upstream_ref"
